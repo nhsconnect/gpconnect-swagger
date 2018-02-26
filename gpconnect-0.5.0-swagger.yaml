@@ -69,8 +69,10 @@ paths:
           description: Authorization header containing JSON Web Token
           required: true
       responses:
-        '405':
-          description: Invalid input
+        '200':
+          description: OK
+        '400':
+          description: Bad request
   /Patient/$gpc.getcarerecord:
     post:
       tags:
@@ -119,22 +121,15 @@ paths:
           description: ''
           required: true
           schema:
-            $ref: '#/definitions/GetCareRecordBody'
-          
+            $ref: '#/definitions/GetRecordSection'
       responses:
         '200':
-          description: successful operation
+          description: OK
         '400':
-          description: Invalid status value
+          description: Bad request
 definitions:
-  GetCareRecordBody:
+  GetRecordSection:
     type: object
-    properties:
-      resourceType:
-        type: string
-        default: "Parameters"
-      parameter:
-        type: string
     example:
       resourceType: "Parameters"
       parameter: 
