@@ -145,7 +145,7 @@ definitions:
         - name: "recordSection"
           valueCodeableConcept: 
             coding:
-              - system: "https://fhir.nhs.uk/ValueSet/gpconnect-record-section-1"
+              - system: "http://fhir.nhs.net/ValueSet/gpconnect-record-section-1"
                 code: "ALL"
     xml:
       name: Parameters
