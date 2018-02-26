@@ -18,3 +18,7 @@
 	content: url('nhs-digital-logo.png');
 	float: right;
 }
+
+.information-container .block .info .main a {
+	display: none;
+}
