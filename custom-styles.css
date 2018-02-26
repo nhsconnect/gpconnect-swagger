@@ -1,0 +1,20 @@
+.topbar {
+	display: none;
+}
+
+.scheme-container {
+	display: none;
+}
+
+.version {
+	font-size: large;
+}
+
+.swagger-ui .info .title small {
+	background-color: #005eb8;
+}
+
+.title:after {
+	content: url('nhs-digital-logo.png');
+	float: right;
+}
