@@ -1,0 +1,154 @@
+swagger: '2.0'
+info:
+  description: This is the GP Connect 0.5.0 API demonstration server.
+  version: 0.5.0
+  title: GP Connect
+  termsOfService: ''
+  license:
+    name: Open Government License
+    url: 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/'
+host: 'ec2-54-194-109-184.eu-west-1.compute.amazonaws.com:380'
+basePath: /fhir
+tags:
+  - name: Foundations
+    description: ''
+    externalDocs:
+      description: Specification
+      url: 'https://developer.nhs.uk/apis/gpconnect-0-5-0/foundations.html'
+  - name: Access Record HTML
+    description: ''
+    externalDocs:
+      description: Specification
+      url: 'https://developer.nhs.uk/apis/gpconnect-0-5-0/accessrecord.html'
+schemes:
+  - http
+paths:
+  /metadata:
+    get:
+      tags:
+      - Foundations
+      summary: Get the FHIR® conformance profile
+      description: ''
+      consumes:
+        - application/json+fhir
+        - application/xml+fhir
+      produces:
+        - application/json+fhir
+        - application/xml+fhir
+      parameters:
+        - in: header
+          name: Ssp-TraceID
+          type: string
+          default: 09a01679-2564-0fb4-5129-aecc81ea2706
+          description: Consumer Trace ID (i.e. GUID/UUID)
+          required: true
+        - in: header
+          name: Ssp-From
+          type: string
+          default: '200000000359'
+          description: Consumer ASID
+          required: true
+        - in: header
+          name: Ssp-To
+          type: string
+          default: '200000000359'
+          description: Provider ASID
+          required: true
+        - in: header
+          name: Ssp-InteractionID
+          type: string
+          default: 'urn:nhs:names:services:gpconnect:fhir:rest:read:metadata'
+          description: SDS Interaction ID
+          required: true
+        - in: header
+          name: Authorization
+          type: string
+          default: >-
+            Bearer
+            .ewogImlzcyI6ICJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0LmV1LXdlc3QtMS5jb21wdXRlLmFtYXpvbmF3cy5jb20vIy9zZWFyY2giLAogInN1YiI6ICIxIiwKICJhdWQiOiAiaHR0cHM6Ly9hdXRob3JpemUuZmhpci5uaHMubmV0L3Rva2VuIiwKICJleHAiOiAxNTE5NTEyNjA4LAogImlhdCI6IDE1MTk1MTIzMDgsCiAicmVhc29uX2Zvcl9yZXF1ZXN0IjogImRpcmVjdGNhcmUiLAogInJlcXVlc3RlZF9yZWNvcmQiOiB7CiAgInJlc291cmNlVHlwZSI6ICJPcmdhbml6YXRpb24iLAogICJpZGVudGlmaWVyIjogWwogICB7CiAgICAic3lzdGVtIjogImh0dHA6Ly9maGlyLm5ocy5uZXQvSWQvb2RzLW9yZ2FuaXphdGlvbi1jb2RlIiwKICAgICJ2YWx1ZSI6ICJBMTExMTEiCiAgIH0KICBdCiB9LAogInJlcXVlc3RlZF9zY29wZSI6ICJvcmdhbml6YXRpb24vKi5yZWFkIiwKICJyZXF1ZXN0aW5nX2RldmljZSI6IHsKICAicmVzb3VyY2VUeXBlIjogIkRldmljZSIsCiAgImlkIjogIjEiLAogICJpZGVudGlmaWVyIjogWwogICB7CiAgICAic3lzdGVtIjogIldlYiBJbnRlcmZhY2UiLAogICAgInZhbHVlIjogIkdQIENvbm5lY3QgRGVtb25zdHJhdG9yIgogICB9CiAgXSwKICAibW9kZWwiOiAiRGVtb25zdHJhdG9yIiwKICAidmVyc2lvbiI6ICIxLjAiCiB9LAogInJlcXVlc3Rpbmdfb3JnYW5pemF0aW9uIjogewogICJyZXNvdXJjZVR5cGUiOiAiT3JnYW5pemF0aW9uIiwKICAiaWQiOiAiMSIsCiAgImlkZW50aWZpZXIiOiBbCiAgIHsKICAgICJzeXN0ZW0iOiAiaHR0cDovL2ZoaXIubmhzLm5ldC9JZC9vZHMtb3JnYW5pemF0aW9uLWNvZGUiLAogICAgInZhbHVlIjogIkExMTExMSIKICAgfQogIF0sCiAgIm5hbWUiOiAiR1AgQ29ubmVjdCBEZW1vbnN0cmF0b3IiCiB9LAogInJlcXVlc3RpbmdfcHJhY3RpdGlvbmVyIjogewogICJyZXNvdXJjZVR5cGUiOiAiUHJhY3RpdGlvbmVyIiwKICAiaWQiOiAiMSIsCiAgImlkZW50aWZpZXIiOiBbCiAgIHsKICAgICJzeXN0ZW0iOiAiaHR0cDovL2ZoaXIubmhzLm5ldC9zZHMtdXNlci1pZCIsCiAgICAidmFsdWUiOiAiRzEzNTc5MTM1IgogICB9LAogICB7CiAgICAic3lzdGVtIjogImxvY2FsU3lzdGVtIiwKICAgICJ2YWx1ZSI6ICIxIgogICB9CiAgXSwKICAibmFtZSI6IHsKICAgICJmYW1pbHkiOiBbCiAgICAgICJEZW1vbnN0cmF0b3IiCiAgICBdLAogICAgImdpdmVuIjogWwogICAgICAiR1BDb25uZWN0IgogICAgXSwKICAgICJwcmVmaXgiOiBbCiAgICAgICJNciIKICAgIF0KICB9LAogICJwcmFjdGl0aW9uZXJSb2xlIjogWwogICAgewogICAgICAicm9sZSI6IHsKICAgICAgICAiY29kaW5nIjogWwogICAgICAgICAgewogICAgICAgICAgICAic3lzdGVtIjogImh0dHA6Ly9maGlyLm5ocy5uZXQvVmFsdWVTZXQvc2RzLWpvYi1yb2xlLW5hbWUtMSIsCiAgICAgICAgICAgICJjb2RlIjogInNkcy1qb2Itcm9sZS1uYW1lIgogICAgICAgICAgfQogICAgICAgIF0KICAgICAgfQogICAgfQogIF0KIH0KfQ.
+          description: Authorization header containing JSON Web Token
+          required: true
+      responses:
+        '405':
+          description: Invalid input
+  /Patient/$gpc.getcarerecord:
+    post:
+      tags:
+        - Access Record HTML
+      summary: Retrieve a care record section
+      consumes:
+        - application/json+fhir
+        - application/xml+fhir
+      produces:
+        - application/json+fhir
+        - application/xml+fhir
+      parameters:
+        - in: header
+          name: Ssp-TraceID
+          type: string
+          default: 09a01679-2564-0fb4-5129-aecc81ea2706
+          description: Consumer Trace ID (i.e. GUID/UUID)
+          required: true
+        - in: header
+          name: Ssp-From
+          type: string
+          default: '200000000359'
+          description: Consumer ASID
+          required: true
+        - in: header
+          name: Ssp-To
+          type: string
+          default: '200000000359'
+          description: Provider ASID
+          required: true
+        - in: header
+          name: Ssp-InteractionID
+          type: string
+          default: 'urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord'
+          description: SDS Interaction ID
+          required: true
+        - in: header
+          name: Authorization
+          type: string
+          default: >-
+            Bearer .ewogImlzcyI6ICJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0LmV1LXdlc3QtMS5jb21wdXRlLmFtYXpvbmF3cy5jb20vIy9zZWFyY2giLAogInN1YiI6ICIxIiwKICJhdWQiOiAiaHR0cHM6Ly9hdXRob3JpemUuZmhpci5uaHMubmV0L3Rva2VuIiwKICJleHAiOiAxNTE5NTEyNjA4LAogImlhdCI6IDE1MTk1MTIzMDgsCiAicmVhc29uX2Zvcl9yZXF1ZXN0IjogImRpcmVjdGNhcmUiLAogInJlcXVlc3RlZF9yZWNvcmQiOiB7CiAgInJlc291cmNlVHlwZSI6ICJQYXRpZW50IiwKICAiaWRlbnRpZmllciI6IFsKICAgewogICAgInN5c3RlbSI6ICJodHRwOi8vZmhpci5uaHMubmV0L0lkL25ocy1udW1iZXIiLAogICAgInZhbHVlIjogIjk0NzY3MTk5NTgiCiAgIH0KICBdCiB9LAogInJlcXVlc3RlZF9zY29wZSI6ICJwYXRpZW50LyoucmVhZCIsCiAicmVxdWVzdGluZ19kZXZpY2UiOiB7CiAgInJlc291cmNlVHlwZSI6ICJEZXZpY2UiLAogICJpZCI6ICIxIiwKICAiaWRlbnRpZmllciI6IFsKICAgewogICAgInN5c3RlbSI6ICJXZWIgSW50ZXJmYWNlIiwKICAgICJ2YWx1ZSI6ICJHUCBDb25uZWN0IERlbW9uc3RyYXRvciIKICAgfQogIF0sCiAgIm1vZGVsIjogIkRlbW9uc3RyYXRvciIsCiAgInZlcnNpb24iOiAiMS4wIgogfSwKICJyZXF1ZXN0aW5nX29yZ2FuaXphdGlvbiI6IHsKICAicmVzb3VyY2VUeXBlIjogIk9yZ2FuaXphdGlvbiIsCiAgImlkIjogIjEiLAogICJpZGVudGlmaWVyIjogWwogICB7CiAgICAic3lzdGVtIjogImh0dHA6Ly9maGlyLm5ocy5uZXQvSWQvb2RzLW9yZ2FuaXphdGlvbi1jb2RlIiwKICAgICJ2YWx1ZSI6ICJBMTExMTEiCiAgIH0KICBdLAogICJuYW1lIjogIkdQIENvbm5lY3QgRGVtb25zdHJhdG9yIgogfSwKICJyZXF1ZXN0aW5nX3ByYWN0aXRpb25lciI6IHsKICAicmVzb3VyY2VUeXBlIjogIlByYWN0aXRpb25lciIsCiAgImlkIjogIjEiLAogICJpZGVudGlmaWVyIjogWwogICB7CiAgICAic3lzdGVtIjogImh0dHA6Ly9maGlyLm5ocy5uZXQvc2RzLXVzZXItaWQiLAogICAgInZhbHVlIjogIkcxMzU3OTEzNSIKICAgfSwKICAgewogICAgInN5c3RlbSI6ICJsb2NhbFN5c3RlbSIsCiAgICAidmFsdWUiOiAiMSIKICAgfQogIF0sCiAgIm5hbWUiOiB7CiAgICAiZmFtaWx5IjogWwogICAgICAiRGVtb25zdHJhdG9yIgogICAgXSwKICAgICJnaXZlbiI6IFsKICAgICAgIkdQQ29ubmVjdCIKICAgIF0sCiAgICAicHJlZml4IjogWwogICAgICAiTXIiCiAgICBdCiAgfSwKICAicHJhY3RpdGlvbmVyUm9sZSI6IFsKICAgIHsKICAgICAgInJvbGUiOiB7CiAgICAgICAgImNvZGluZyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgInN5c3RlbSI6ICJodHRwOi8vZmhpci5uaHMubmV0L1ZhbHVlU2V0L3Nkcy1qb2Itcm9sZS1uYW1lLTEiLAogICAgICAgICAgICAiY29kZSI6ICJzZHMtam9iLXJvbGUtbmFtZSIKICAgICAgICAgIH0KICAgICAgICBdCiAgICAgIH0KICAgIH0KICBdCiB9Cn0.
+          description: Authorization header containing JSON Web Token
+          required: true
+        - in: body
+          name: body
+          description: ''
+          required: true
+          schema:
+            $ref: '#/definitions/GetCareRecordBody'
+          
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Invalid status value
+definitions:
+  GetCareRecordBody:
+    type: object
+    properties:
+      resourceType:
+        type: string
+        default: "Parameters"
+      parameter:
+        type: string
+    example:
+      resourceType: "Parameters"
+      parameter: 
+        - name: "patientNHSNumber"
+          valueIdentifier: 
+            system: "http://fhir.nhs.net/Id/nhs-number"
+            value: "9476719958"
+        - name: "recordSection"
+          valueCodeableConcept: 
+            coding:
+              - system: "https://fhir.nhs.uk/ValueSet/gpconnect-record-section-1"
+                code: "ALL"
+    xml:
+      name: Parameters
+externalDocs:
+  description: GP Connect 0.5.0 specification
+  url: 'https://developer.nhs.uk/apis/gpconnect-0-5-0/'
