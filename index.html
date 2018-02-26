@@ -76,6 +76,11 @@ window.onload = function() {
     url: "http://vitalsignssoftware.com/gpconnect/gpconnect-0.5.0-swagger.yaml",
     dom_id: '#swagger-ui',
     deepLinking: true,
+    requestInterceptor: function(request) {
+        // window.alert(request.headers.Authorization);
+        // request.headers.Authorization = "1234";
+        return request;
+    },
     presets: [
       SwaggerUIBundle.presets.apis,
       SwaggerUIStandalonePreset
