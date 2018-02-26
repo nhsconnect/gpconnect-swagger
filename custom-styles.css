@@ -22,3 +22,17 @@
 .information-container .block .info .main a {
 	display: none;
 }
+
+h4,
+.swagger-ui .parameter__name,
+.swagger-ui .opblock-tag,
+.swagger-ui .opblock .opblock-section-header h4,
+.swagger-ui section.models h4,
+.swagger-ui .model-title,
+.swagger-ui .btn {
+	font-family: Open Sans, sans-serif;
+}
+
+.swagger-ui .opblock .opblock-summary-method {
+	font-family: Source Code Pro, monospace;
+}
