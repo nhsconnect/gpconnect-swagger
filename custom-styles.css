@@ -41,3 +41,12 @@ h4,
 .swagger-ui .opblock .opblock-summary-method {
 	font-family: Source Code Pro, monospace;
 }
+
+.parameters-col_description div p {
+	margin: 0;
+	font-size: 14px;
+}
+
+.parameters-col_description div {
+	font-size: 14px;
+}
