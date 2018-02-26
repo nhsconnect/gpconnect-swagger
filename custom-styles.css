@@ -29,8 +29,13 @@ h4,
 .swagger-ui .opblock .opblock-section-header h4,
 .swagger-ui section.models h4,
 .swagger-ui .model-title,
-.swagger-ui .btn {
+.swagger-ui .btn,
+.swagger-ui .btn.cancel {
 	font-family: Open Sans, sans-serif;
+}
+
+.swagger-ui .btn {
+	font-size: 18px;
 }
 
 .swagger-ui .opblock .opblock-summary-method {
