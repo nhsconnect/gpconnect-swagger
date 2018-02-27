@@ -130,6 +130,19 @@ paths:
 definitions:
   GetRecordSection:
     type: object
+    properties:
+      resourceType: 
+        type: string
+        default: "Parameters"
+      parameter:
+        type: array
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+            valueIdentifier:
+              type: string
     example:
       resourceType: "Parameters"
       parameter: 
