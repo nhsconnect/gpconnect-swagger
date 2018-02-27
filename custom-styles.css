@@ -23,6 +23,10 @@
 	display: none;
 }
 
+div#swagger-ui section.swagger-ui div.wrapper section span a {
+	display: none;
+}
+
 h4,
 .swagger-ui .parameter__name,
 .swagger-ui .opblock-tag,

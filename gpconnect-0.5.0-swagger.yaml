@@ -121,42 +121,26 @@ paths:
           description: ''
           required: true
           schema:
-            $ref: '#/definitions/GetRecordSection'
+            type: object
+            example:
+              resourceType: "Parameters"
+              parameter: 
+                - name: "patientNHSNumber"
+                  valueIdentifier: 
+                    system: "http://fhir.nhs.net/Id/nhs-number"
+                    value: "9476719958"
+                - name: "recordSection"
+                  valueCodeableConcept: 
+                    coding:
+                      - system: "http://fhir.nhs.net/ValueSet/gpconnect-record-section-1"
+                        code: "ALL"
+            xml:
+              name: Parameters
       responses:
         '200':
           description: OK
         '400':
           description: Bad request
-definitions:
-  GetRecordSection:
-    type: object
-    properties:
-      resourceType: 
-        type: string
-        default: "Parameters"
-      parameter:
-        type: array
-        items:
-          type: object
-          properties:
-            name:
-              type: string
-            valueIdentifier:
-              type: string
-    example:
-      resourceType: "Parameters"
-      parameter: 
-        - name: "patientNHSNumber"
-          valueIdentifier: 
-            system: "http://fhir.nhs.net/Id/nhs-number"
-            value: "9476719958"
-        - name: "recordSection"
-          valueCodeableConcept: 
-            coding:
-              - system: "http://fhir.nhs.net/ValueSet/gpconnect-record-section-1"
-                code: "ALL"
-    xml:
-      name: Parameters
 externalDocs:
   description: GP Connect 0.5.0 specification
   url: 'https://developer.nhs.uk/apis/gpconnect-0-5-0/'
