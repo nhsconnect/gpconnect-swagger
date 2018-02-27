@@ -134,8 +134,6 @@ paths:
                     coding:
                       - system: "http://fhir.nhs.net/ValueSet/gpconnect-record-section-1"
                         code: "ALL"
-            xml:
-              name: Parameters
       responses:
         '200':
           description: OK
