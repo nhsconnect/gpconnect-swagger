@@ -31,10 +31,8 @@ paths:
       description: ''
       consumes:
         - application/json+fhir
-        - application/xml+fhir
       produces:
         - application/json+fhir
-        - application/xml+fhir
       parameters:
         - in: header
           name: Ssp-TraceID
@@ -80,10 +78,8 @@ paths:
       summary: Retrieve a care record section
       consumes:
         - application/json+fhir
-        - application/xml+fhir
       produces:
         - application/json+fhir
-        - application/xml+fhir
       parameters:
         - in: header
           name: Ssp-TraceID
