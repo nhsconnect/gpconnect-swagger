@@ -78,9 +78,8 @@ window.onload = function() {
     dom_id: '#swagger-ui',
     deepLinking: true,
     requestInterceptor: function(request) {
-        // window.alert(request.headers.Authorization);
-        // request.headers.Authorization = "1234";
-        return request;
+      request.headers.Authorization = 'Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.' + encodeBase64Url(request.headers.Authorization) + '.';
+      return request;
     },
     presets: [
       SwaggerUIBundle.presets.apis,
