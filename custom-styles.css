@@ -19,6 +19,38 @@
 	display: none;
 }
 
+.parameter__description {
+	font-weight: bold;
+}
+
+.parameter__defaultvalue,
+.parameter__examplevalue {
+	padding-top: 10px;
+}
+
+.parameter__defaultvalue_header,
+.parameter__examplevalue_header {
+	font-style: italic;
+	padding-right: 5px;
+}
+
+.parameter__defaultvalue_value,
+.parameter__examplevalue_value {
+	font-family: Source Code Pro, monospace;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.swagger-ui input[type="email"], 
+.swagger-ui input[type="file"], 
+.swagger-ui input[type="password"], 
+.swagger-ui input[type="search"], 
+.swagger-ui input[type="text"],
+.swagger-ui textarea
+{
+	margin-top: 5px;
+}
+
 div#swagger-ui section.swagger-ui div.wrapper section span a {
 	display: none;
 }
