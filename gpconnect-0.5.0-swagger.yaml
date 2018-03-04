@@ -61,6 +61,7 @@ paths:
         - in: header
           name: Authorization
           type: string
+          x-multiline: true
           default: |-
             {
              "iss": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search",
@@ -184,6 +185,7 @@ paths:
         - in: header
           name: Authorization
           type: string
+          x-multiline: true
           default: |-
             {
              "iss": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search",
