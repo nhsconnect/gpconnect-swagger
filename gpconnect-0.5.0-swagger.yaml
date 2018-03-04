@@ -37,19 +37,19 @@ paths:
         - in: header
           name: Ssp-TraceID
           type: string
-          default: 09a01679-2564-0fb4-5129-aecc81ea2706
+          x-example: 09a01679-2564-0fb4-5129-aecc81ea2706
           description: Consumer Trace ID (i.e. GUID/UUID)
           required: true
         - in: header
           name: Ssp-From
           type: string
-          default: '200000000359'
+          x-example: '200000000359'
           description: Consumer ASID
           required: true
         - in: header
           name: Ssp-To
           type: string
-          default: '200000000359'
+          x-example: '200000000359'
           description: Provider ASID
           required: true
         - in: header
@@ -160,19 +160,19 @@ paths:
         - in: header
           name: Ssp-TraceID
           type: string
-          default: 09a01679-2564-0fb4-5129-aecc81ea2706
+          x-example: 09a01679-2564-0fb4-5129-aecc81ea2706
           description: Consumer Trace ID (i.e. GUID/UUID)
           required: true
         - in: header
           name: Ssp-From
           type: string
-          default: '200000000359'
+          x-example: '200000000359'
           description: Consumer ASID
           required: true
         - in: header
           name: Ssp-To
           type: string
-          default: '200000000359'
+          x-example: '200000000359'
           description: Provider ASID
           required: true
         - in: header
