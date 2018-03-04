@@ -19,6 +19,48 @@
 	display: none;
 }
 
+.parameters-col_description div p {
+	margin: 0;
+	font-size: 14px;
+}
+
+.parameters-col_description div {
+	font-size: 14px;
+}
+
+.swagger-ui table tbody tr td.parameters-col_description {
+	padding: 10px 0px 10px 0px;
+}
+
+.parameters-col_description div ul.tab {
+	margin: 0;
+	padding-bottom: 10px;
+}
+
+.swagger-ui .tab .model-example-tabitem {
+	display: none;
+	cursor: text;
+	padding-top: 10px;
+}
+
+.swagger-ui .tab .model-example-tabitem a {
+	font-weight: normal;
+	font-size: 14px;
+	font-style: italic;
+}
+
+/*.swagger-ui .tab .model-example-tabitem a::after {
+	content: ':'
+}
+*/
+.swagger-ui .tab .model-model-tabitem {
+	display: none;
+}
+
+.swagger-ui .tab li:first-of-type::after {
+	width: 0px;
+}
+
 .parameter__description {
 	font-weight: bold;
 }
@@ -55,15 +97,10 @@ div#swagger-ui section.swagger-ui div.wrapper section span a {
 	display: none;
 }
 
-.swagger-ui input,
-td.parameters-col_description div.markdown:nth-child(2) {
+.swagger-ui input {
 	font-family: Source Code Pro, monospace;
 	font-size: 12px;
 	font-weight: 600;
-}
-
-td.parameters-col_description div.markdown:nth-child(2) p i {
-	font-weight: normal;
 }
 
 .swagger-ui .parameters-col_description input[type="text"] {
@@ -99,11 +136,3 @@ td.parameters-col_description div.markdown:nth-child(2) p i,
 	font-family: Source Code Pro, monospace;
 }
 
-.parameters-col_description div p {
-	margin: 0;
-	font-size: 14px;
-}
-
-.parameters-col_description div {
-	font-size: 14px;
-}
