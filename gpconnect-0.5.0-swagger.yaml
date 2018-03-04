@@ -63,7 +63,7 @@ paths:
           type: string
           x-multiline: true
           description: Authorization header containing JWT
-          default: |-
+          x-example: |-
             {
              "iss": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search",
              "sub": "1",
@@ -186,7 +186,7 @@ paths:
           name: Authorization
           type: string
           x-multiline: true
-          default: |-
+          example: |-
             {
              "iss": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search",
              "sub": "1",
@@ -269,7 +269,7 @@ paths:
           required: true
         - in: body
           name: body
-          description: ''
+          description: 'Care record section request'
           required: true
           schema:
             type: object
