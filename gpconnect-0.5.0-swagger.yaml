@@ -38,7 +38,7 @@ paths:
           name: Ssp-TraceID
           type: string
           x-example: 09a01679-2564-0fb4-5129-aecc81ea2706
-          description: Consumer Trace ID (i.e. GUID/UUID)
+          description: Consumer trace identifier
           required: true
         - in: header
           name: Ssp-From
@@ -56,12 +56,13 @@ paths:
           name: Ssp-InteractionID
           type: string
           default: 'urn:nhs:names:services:gpconnect:fhir:rest:read:metadata'
-          description: SDS Interaction ID
+          description: SDS interaction identifier
           required: true
         - in: header
           name: Authorization
           type: string
           x-multiline: true
+          description: Authorization header containing JWT
           default: |-
             {
              "iss": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search",
@@ -141,7 +142,6 @@ paths:
               ]
              }
             }
-          description: Authorization header containing JSON Web Token
           required: true
       responses:
         '200':
@@ -162,7 +162,7 @@ paths:
           name: Ssp-TraceID
           type: string
           x-example: 09a01679-2564-0fb4-5129-aecc81ea2706
-          description: Consumer Trace ID (i.e. GUID/UUID)
+          description: Consumer trace identifier
           required: true
         - in: header
           name: Ssp-From
@@ -180,7 +180,7 @@ paths:
           name: Ssp-InteractionID
           type: string
           default: 'urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord'
-          description: SDS Interaction ID
+          description: SDS interaction identifier
           required: true
         - in: header
           name: Authorization
@@ -265,7 +265,7 @@ paths:
               ]
              }
             }
-          description: Authorization header containing JSON Web Token
+          description: Authorization header containing JWT
           required: true
         - in: body
           name: body
