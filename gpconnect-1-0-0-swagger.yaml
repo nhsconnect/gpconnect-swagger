@@ -23,6 +23,10 @@ tags:
 schemes:
   - http
 paths:
+
+############################################################
+# Get the FHIR® conformance profile 
+############################################################
   /metadata:
     get:
       tags:
@@ -30,9 +34,9 @@ paths:
       summary: Get the FHIR® conformance profile
       description: ''
       consumes:
-        - application/json+fhir
+        - application/fhir+json
       produces:
-        - application/json+fhir
+        - application/fhir+json
       parameters:
         - in: header
           name: Ssp-TraceID
@@ -55,7 +59,7 @@ paths:
         - in: header
           name: Ssp-InteractionID
           type: string
-          default: 'urn:nhs:names:services:gpconnect:fhir:rest:read:metadata'
+          default: 'urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1'
           description: SDS interaction identifier
           required: true
         - in: header
@@ -67,7 +71,7 @@ paths:
             {
              "iss": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search",
              "sub": "1",
-             "aud": "https://authorize.fhir.nhs.net/token",
+             "aud": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search",
              "exp": 1519512608,
              "iat": 1519512308,
              "reason_for_request": "directcare",
@@ -75,7 +79,7 @@ paths:
               "resourceType": "Organization",
               "identifier": [
                {
-                "system": "http://fhir.nhs.net/Id/ods-organization-code",
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
                 "value": "A11111"
                }
               ]
@@ -92,13 +96,14 @@ paths:
               ],
               "model": "Demonstrator",
               "version": "1.0"
+              "url": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search"
              },
              "requesting_organization": {
               "resourceType": "Organization",
               "id": "1",
               "identifier": [
                {
-                "system": "http://fhir.nhs.net/Id/ods-organization-code",
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
                 "value": "A11111"
                }
               ],
@@ -109,7 +114,7 @@ paths:
               "id": "1",
               "identifier": [
                {
-                "system": "http://fhir.nhs.net/sds-user-id",
+                "system": "https://fhir.nhs.uk/sds-user-id",
                 "value": "G13579135"
                },
                {
@@ -118,28 +123,16 @@ paths:
                }
               ],
               "name": {
-                "family": [
+                "family": {
                   "Demonstrator"
-                ],
+                },
                 "given": [
                   "GPConnect"
                 ],
                 "prefix": [
                   "Mr"
                 ]
-              },
-              "practitionerRole": [
-                {
-                  "role": {
-                    "coding": [
-                      {
-                        "system": "http://fhir.nhs.net/ValueSet/sds-job-role-name-1",
-                        "code": "sds-job-role-name"
-                      }
-                    ]
-                  }
-                }
-              ]
+              }
              }
             }
           required: true
@@ -148,15 +141,264 @@ paths:
           description: OK
         '400':
           description: Bad request
+
+############################################################
+# Find a patient
+############################################################
+  /Patient:
+    get:
+      tags:
+      - Foundations
+      summary: Find a patient
+      description: ''
+      consumes:
+        - application/fhir+json
+      produces:
+        - application/fhir+json
+      parameters:
+        - in: header
+          name: Ssp-TraceID
+          type: string
+          x-example: 09a01679-2564-0fb4-5129-aecc81ea2706
+          description: Consumer trace identifier
+          required: true
+        - in: header
+          name: Ssp-From
+          type: string
+          x-example: '200000000359'
+          description: Consumer ASID
+          required: true
+        - in: header
+          name: Ssp-To
+          type: string
+          x-example: '200000000359'
+          description: Provider ASID
+          required: true
+        - in: header
+          name: Ssp-InteractionID
+          type: string
+          default: 'urn:nhs:names:services:gpconnect:fhir:rest:search:patient-1'
+          description: SDS interaction identifier
+          required: true
+        - in: header
+          name: Authorization
+          type: string
+          x-multiline: true
+          description: Authorization header containing JWT
+          x-example: |-
+            {
+             "iss": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search",
+             "sub": "1",
+             "aud": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search",
+             "exp": 1519512608,
+             "iat": 1519512308,
+             "reason_for_request": "directcare",
+             "requested_record": {
+              "resourceType": "Organization",
+              "identifier": [
+               {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "A11111"
+               }
+              ]
+             },
+             "requested_scope": "organization/*.read",
+             "requesting_device": {
+              "resourceType": "Device",
+              "id": "1",
+              "identifier": [
+               {
+                "system": "Web Interface",
+                "value": "GP Connect Demonstrator"
+               }
+              ],
+              "model": "Demonstrator",
+              "version": "1.0"
+              "url": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search"
+             },
+             "requesting_organization": {
+              "resourceType": "Organization",
+              "id": "1",
+              "identifier": [
+               {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "A11111"
+               }
+              ],
+              "name": "GP Connect Demonstrator"
+             },
+             "requesting_practitioner": {
+              "resourceType": "Practitioner",
+              "id": "1",
+              "identifier": [
+               {
+                "system": "https://fhir.nhs.uk/sds-user-id",
+                "value": "G13579135"
+               },
+               {
+                "system": "localSystem",
+                "value": "1"
+               }
+              ],
+              "name": {
+                "family": {
+                  "Demonstrator"
+                },
+                "given": [
+                  "GPConnect"
+                ],
+                "prefix": [
+                  "Mr"
+                ]
+              }
+             }
+            }
+          required: true
+        - in: query
+          name: identifier
+          type: string
+          description: Patient identifier
+          x-example: 'https://fhir.nhs.uk/Id/nhs-number|99999999'
+          required: true
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request
+
+############################################################
+# Read a patient
+############################################################
+  /Patient/{id}:
+    get:
+      tags:
+      - Foundations
+      summary: Read a patient
+      description: ''
+      consumes:
+        - application/fhir+json
+      produces:
+        - application/fhir+json
+      parameters:
+        - in: header
+          name: Ssp-TraceID
+          type: string
+          x-example: 09a01679-2564-0fb4-5129-aecc81ea2706
+          description: Consumer trace identifier
+          required: true
+        - in: header
+          name: Ssp-From
+          type: string
+          x-example: '200000000359'
+          description: Consumer ASID
+          required: true
+        - in: header
+          name: Ssp-To
+          type: string
+          x-example: '200000000359'
+          description: Provider ASID
+          required: true
+        - in: header
+          name: Ssp-InteractionID
+          type: string
+          default: 'urn:nhs:names:services:gpconnect:fhir:rest:read:patient-1'
+          description: SDS interaction identifier
+          required: true
+        - in: header
+          name: Authorization
+          type: string
+          x-multiline: true
+          description: Authorization header containing JWT
+          x-example: |-
+            {
+             "iss": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search",
+             "sub": "1",
+             "aud": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search",
+             "exp": 1519512608,
+             "iat": 1519512308,
+             "reason_for_request": "directcare",
+             "requested_record": {
+              "resourceType": "Organization",
+              "identifier": [
+               {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "A11111"
+               }
+              ]
+             },
+             "requested_scope": "organization/*.read",
+             "requesting_device": {
+              "resourceType": "Device",
+              "id": "1",
+              "identifier": [
+               {
+                "system": "Web Interface",
+                "value": "GP Connect Demonstrator"
+               }
+              ],
+              "model": "Demonstrator",
+              "version": "1.0"
+              "url": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search"
+             },
+             "requesting_organization": {
+              "resourceType": "Organization",
+              "id": "1",
+              "identifier": [
+               {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "A11111"
+               }
+              ],
+              "name": "GP Connect Demonstrator"
+             },
+             "requesting_practitioner": {
+              "resourceType": "Practitioner",
+              "id": "1",
+              "identifier": [
+               {
+                "system": "https://fhir.nhs.uk/sds-user-id",
+                "value": "G13579135"
+               },
+               {
+                "system": "localSystem",
+                "value": "1"
+               }
+              ],
+              "name": {
+                "family": {
+                  "Demonstrator"
+                },
+                "given": [
+                  "GPConnect"
+                ],
+                "prefix": [
+                  "Mr"
+                ]
+              }
+             }
+            }
+          required: true
+        - in: path
+          name: id
+          type: string
+          description: Patient logical identifier
+          x-example: '09a01679-2564-0fb4-5129-aecc81ea2706'
+          required: true
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request
+
   /Patient/$gpc.getcarerecord:
     post:
       tags:
         - Appointment Management
       summary: Retrieve a care record section
       consumes:
-        - application/json+fhir
+        - application/fhir+json
       produces:
-        - application/json+fhir
+        - application/fhir+json
       parameters:
         - in: header
           name: Ssp-TraceID
