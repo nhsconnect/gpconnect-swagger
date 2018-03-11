@@ -1,12 +1,15 @@
 swagger: '2.0'
 info:
-  description: This is the GP Connect 0.5.0 API demonstration server.
+  description: |-
+    This is the GP Connect 0.5.0 (DSTU2) API demonstration server, which is built against the <a href='https://developer.nhs.uk/apis/gpconnect-0-5-0/'>GP Connect 0.5.0 specification</a>.
+
+    <p>The following other API demonstration servers are also available:</p>
+    <ul>
+      <li><a href='gpconnect-1-0-0.html'>GP Connect 1.0.0 (STU3)</li>
+    </ul>
   version: 0.5.0
   title: GP Connect
   termsOfService: ''
-  license:
-    name: Open Government License
-    url: 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/'
 host: 'ec2-54-194-109-184.eu-west-1.compute.amazonaws.com:380'
 basePath: /fhir
 tags:
@@ -290,6 +293,3 @@ paths:
           description: OK
         '400':
           description: Bad request
-externalDocs:
-  description: GP Connect 0.5.0 specification
-  url: 'https://developer.nhs.uk/apis/gpconnect-0-5-0/'
