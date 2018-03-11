@@ -136,3 +136,7 @@ td.parameters-col_description div.markdown:nth-child(2) p i,
 	font-family: Source Code Pro, monospace;
 }
 
+div.description div.markdown p,
+div.description div.markdown a {
+	font-size: 16px;
+}
