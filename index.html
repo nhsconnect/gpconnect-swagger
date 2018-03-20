@@ -23,7 +23,7 @@
 
     body {
       margin:0;
-      background: #fafafa;
+      /*background: #fafafa;*/
     }
   </style>
 </head>
@@ -66,9 +66,9 @@
 
 <div id="swagger-ui"></div>
 
-<script src="./base64url.js"> </script>
 <script src="./swagger-ui/swagger-ui-bundle.js"> </script>
 <script src="./swagger-ui/swagger-ui-standalone-preset.js"> </script>
+<script src="./custom-script.js"> </script>
 <script>
 window.onload = function() {
   
@@ -78,7 +78,7 @@ window.onload = function() {
     dom_id: '#swagger-ui',
     deepLinking: true,
     requestInterceptor: function(request) {
-      request.headers.Authorization = 'Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.' + encodeBase64Url(request.headers.Authorization) + '.';
+      request.headers.Authorization = 'Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.' + customScript.encodeBase64Url(request.headers.Authorization) + '.';
       return request;
     },
     presets: [
