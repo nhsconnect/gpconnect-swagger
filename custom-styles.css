@@ -144,3 +144,10 @@ div.description div.markdown a {
 body {
 	background-color: white;
 }
+
+#last-deploy-date {
+	font-size: 10px;
+	font-family: Source Code Pro, monospace;
+	color: #aaa;
+	float: right;
+}
