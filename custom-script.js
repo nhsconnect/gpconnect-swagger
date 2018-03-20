@@ -155,8 +155,8 @@ var customScript = (function(){
     };
 
     return {
-        encodeBase64Url: function() {
-            encodeBase64Url();
+        encodeBase64Url: function(str) {
+            return encodeBase64Url(str);
         }
     };
 
