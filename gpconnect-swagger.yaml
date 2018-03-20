@@ -1,12 +1,9 @@
 swagger: '2.0'
 info:
   description: |-
-    This is the GP Connect 0.5.0 (DSTU2) API demonstration, which is built against the <a href='https://developer.nhs.uk/apis/gpconnect-0-5-0/'>GP Connect 0.5.0 specification</a>.
+    This is interactive API documentation for GP Connect 0.5.0 (DSTU2), which has been authored from the <a href='https://developer.nhs.uk/apis/gpconnect-0-5-0/'>GP Connect 0.5.0 specification</a>.
 
-    <p>The following other API demonstration are also available:</p>
-    <ul>
-      <li><a href='../v1'>GP Connect 1.x (STU3)</li>
-    </ul>
+    <a href='../v1'>Interactive API documentation for GP Connect 1.x (STU3)</a> is also available.
   version: 0.5.0
   title: GP Connect
   termsOfService: ''
