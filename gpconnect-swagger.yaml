@@ -3,7 +3,7 @@ info:
   description: |-
     This is interactive API documentation for GP Connect 1.0.0 (STU3), which has been authored from the <a href='https://developer.nhs.uk/apis/gpconnect-1-0-0/'>GP Connect 1.0.0 specification</a>.
 
-    <a href='../v0'>Interactive API documentation for GP Connect 0.x (DSTU2)</a> is also available.
+    <a href='../v0'>Interactive API documentation</a> for GP Connect 0.x (DSTU2) is also available.
   version: 1.0.0
   title: GP Connect
   termsOfService: ''
