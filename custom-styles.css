@@ -140,3 +140,7 @@ div.description div.markdown p,
 div.description div.markdown a {
 	font-size: 16px;
 }
+
+body {
+	background-color: white;
+}
