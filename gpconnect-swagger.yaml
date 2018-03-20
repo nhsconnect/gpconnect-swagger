@@ -5,13 +5,13 @@ info:
 
     <p>The following other API demonstration are also available:</p>
     <ul>
-      <li><a href='gpconnect-1-0-0.html'>GP Connect 1.0.0 (STU3)</li>
+      <li><a href='../v1'>GP Connect 1.x (STU3)</li>
     </ul>
   version: 0.5.0
   title: GP Connect
   termsOfService: ''
-host: 'ec2-54-194-109-184.eu-west-1.compute.amazonaws.com:380'
-basePath: /fhir
+host: 'orange.testlab.nhs.uk'
+basePath: /v0/fhir/
 tags:
   - name: Foundations
     description: ''
@@ -24,7 +24,7 @@ tags:
       description: Specification
       url: 'https://developer.nhs.uk/apis/gpconnect-0-5-0/accessrecord.html'
 schemes:
-  - http
+  - https
 paths:
   /metadata:
     get:
