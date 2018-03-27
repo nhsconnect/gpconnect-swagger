@@ -21,7 +21,7 @@ tags:
       description: Specification
       url: 'https://developer.nhs.uk/apis/gpconnect-1-0-0/appointments.html'
 schemes:
-  - http
+  - https
 paths:
 
 ############################################################
