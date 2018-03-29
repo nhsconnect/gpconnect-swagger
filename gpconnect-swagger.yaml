@@ -75,15 +75,6 @@ paths:
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
-              "requested_record": {
-                "resourceType": "Organization",
-                "identifier": [
-                  {
-                    "system": "https://fhir.nhs.uk/Id/ods-organization-code",
-                    "value": "GPC001"
-                  }
-                ]
-              },
               "requested_scope": "organization/*.read",
               "requesting_device": {
                 "resourceType": "Device",
@@ -195,15 +186,6 @@ paths:
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
-              "requested_record": {
-                "resourceType": "Patient",
-                "identifier": [
-                  {
-                    "system": "https://fhir.nhs.uk/Id/nhs-number",
-                    "value": "9476719958"
-                  }
-                ]
-              },
               "requested_scope": "patient/*.read",
               "requesting_device": {
                 "resourceType": "Device",
@@ -321,15 +303,6 @@ paths:
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
-              "requested_record": {
-                "resourceType": "Patient",
-                "identifier": [
-                  {
-                    "system": "https://fhir.nhs.uk/Id/nhs-number",
-                    "value": "9476719958"
-                  }
-                ]
-              },
               "requested_scope": "patient/*.read",
               "requesting_device": {
                 "resourceType": "Device",
@@ -447,15 +420,6 @@ paths:
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
-              "requested_record": {
-                "resourceType": "Organization",
-                "identifier": [
-                  {
-                    "system": "https://fhir.nhs.uk/Id/ods-organization-code",
-                    "value": "GPC001"
-                  }
-                ]
-              },
               "requested_scope": "organization/*.read",
               "requesting_device": {
                 "resourceType": "Device",
@@ -573,15 +537,6 @@ paths:
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
-              "requested_record": {
-                "resourceType": "Organization",
-                "identifier": [
-                  {
-                    "system": "https://fhir.nhs.uk/Id/ods-organization-code",
-                    "value": "GPC001"
-                  }
-                ]
-              },
               "requested_scope": "organization/*.read",
               "requesting_device": {
                 "resourceType": "Device",
@@ -699,15 +654,6 @@ paths:
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
-              "requested_record": {
-                "resourceType": "Organization",
-                "identifier": [
-                  {
-                    "system": "https://fhir.nhs.uk/Id/ods-organization-code",
-                    "value": "GPC001"
-                  }
-                ]
-              },
               "requested_scope": "organization/*.read",
               "requesting_device": {
                 "resourceType": "Device",
@@ -825,16 +771,6 @@ paths:
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
-              "requested_record": {
-                "resourceType": "Organization",
-                "id": 1,
-                "identifier": [
-                  {
-                    "system": "https://fhir.nhs.uk/Id/ods-organization-code",
-                    "value": "GPC001"
-                  }
-                ]
-              },
               "requested_scope": "organization/*.read",
               "requesting_device": {
                 "resourceType": "Device",
@@ -952,16 +888,6 @@ paths:
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
-              "requested_record": {
-                "resourceType": "Organization",
-                "id": 1,
-                "identifier": [
-                  {
-                    "system": "https://fhir.nhs.uk/Id/ods-organization-code",
-                    "value": "GPC001"
-                  }
-                ]
-              },
               "requested_scope": "organization/*.read",
               "requesting_device": {
                 "resourceType": "Device",
@@ -1079,15 +1005,6 @@ paths:
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
-              "requested_record": {
-                "resourceType": "Patient",
-                "identifier": [
-                  {
-                    "system": "https://fhir.nhs.uk/Id/nhs-number",
-                    "value": "9999999999"
-                  }
-                ]
-              },
               "requested_scope": "patient/*.write",
               "requesting_device": {
                 "resourceType": "Device",
@@ -1227,15 +1144,6 @@ paths:
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
-              "requested_record": {
-                "resourceType": "Patient",
-                "identifier": [
-                  {
-                    "system": "https://fhir.nhs.uk/Id/nhs-number",
-                    "value": "9476719958"
-                  }
-                ]
-              },
               "requested_scope": "patient/*.read",
               "requesting_device": {
                 "resourceType": "Device",
@@ -1363,16 +1271,6 @@ paths:
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
-              "requested_record": {
-                "resourceType": "Organization",
-                "id": 1,
-                "identifier": [
-                  {
-                    "system": "https://fhir.nhs.uk/Id/ods-organization-code",
-                    "value": "GPC001"
-                  }
-                ]
-              },
               "requested_scope": "organization/*.read",
               "requesting_device": {
                 "resourceType": "Device",
@@ -1527,15 +1425,6 @@ paths:
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
-              "requested_record": {
-                "resourceType": "Patient",
-                "identifier": [
-                  {
-                    "system": "https://fhir.nhs.uk/Id/nhs-number",
-                    "value": "9999999999"
-                  }
-                ]
-              },
               "requested_scope": "patient/*.write",
               "requesting_device": {
                 "resourceType": "Device",
@@ -1674,15 +1563,6 @@ paths:
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
-              "requested_record": {
-                "resourceType": "Patient",
-                "identifier": [
-                  {
-                    "system": "https://fhir.nhs.uk/Id/nhs-number",
-                    "value": "9476719931"
-                  }
-                ]
-              },
               "requested_scope": "patient/*.read",
               "requesting_device": {
                 "resourceType": "Device",
