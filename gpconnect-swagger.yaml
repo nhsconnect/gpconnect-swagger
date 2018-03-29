@@ -1208,11 +1208,11 @@ paths:
           name: start
           type: array
           collectionFormat: multi
-          description: Appointment start date/time
+          description: Appointment start/end dates
           items:
             type: string
-            enum: ['ge2017-07-11', 'le2017-09-14']
           required: false
+          default: ["ge2018-03-29", "le2018-04-15"]
       responses:
         '200':
           description: OK
