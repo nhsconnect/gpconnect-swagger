@@ -1211,7 +1211,7 @@ paths:
           description: Appointment start/end dates
           items:
             type: string
-          required: false
+          required: true
           default: ["ge2018-03-29", "le2018-04-15"]
       responses:
         '200':
