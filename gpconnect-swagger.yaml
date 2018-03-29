@@ -25,13 +25,13 @@ schemes:
 paths:
 
 ############################################################
-# Get the FHIRÂ® conformance profile 
+# Get the FHIR® conformance profile 
 ############################################################
   /metadata:
     get:
       tags:
       - Foundations
-      summary: Get the FHIRÂ® conformance profile
+      summary: Get the FHIR® conformance profile
       description: ''
       consumes:
         - application/fhir+json
@@ -1211,7 +1211,7 @@ paths:
           description: Appointment start/end dates
           items:
             type: string
-          required: false
+          required: true
           default: ["ge2018-03-29", "le2018-04-15"]
       responses:
         '200':
