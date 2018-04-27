@@ -5,7 +5,7 @@ info:
 
     <a href='../v0'>Interactive API documentation</a> for GP Connect 0.x (DSTU2) is also available.
 
-    <i>Warning! This is a test server. Do not store any information here that contains personal health information or any other confidential information. This server will be regularly purged and reloaded with fixed test data.</i>
+    <b>Warning! This is a test server. Do not store any information here that contains personal health information or any other confidential information. This server will be regularly purged and reloaded with fixed test data.</b>
   version: 1.0.0
   title: GP Connect
   termsOfService: ''
