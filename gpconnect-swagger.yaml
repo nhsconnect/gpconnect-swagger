@@ -5,7 +5,7 @@ info:
 
     <a href='../v1'>Interactive API documentation</a> for GP Connect 1.x (STU3) is also available.
 
-    <i>This is a test server. Do not store any information here that contains personal health information or any other confidential information. This server will be regularly purged and reloaded with fixed test data.</i>
+    <i>Warning! This is a test server. Do not store any information here that contains personal health information or any other confidential information. This server will be regularly purged and reloaded with fixed test data.</i>
   version: 0.5.0
   title: GP Connect
   termsOfService: ''
