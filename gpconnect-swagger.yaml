@@ -27,13 +27,13 @@ schemes:
 paths:
 
 ############################################################
-# Get the FHIRÂ® conformance profile 
+# Get the FHIR® conformance profile 
 ############################################################
   /metadata:
     get:
       tags:
       - Foundations
-      summary: Get the FHIRÂ® conformance profile
+      summary: Get the FHIR® conformance profile
       description: ''
       consumes:
         - application/fhir+json
@@ -1638,7 +1638,7 @@ paths:
       tags:
       - Appointment Management
       summary: Amend or cancel an appointment
-      description: 'TBC'
+      description: ''
       consumes:
         - application/fhir+json
       produces:
