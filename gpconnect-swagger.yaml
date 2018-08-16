@@ -1,12 +1,12 @@
 swagger: '2.0'
 info:
   description: |-
-    This is interactive API documentation for GP Connect 1.1.1 (STU3), which has been authored from the <a href='https://developer.nhs.uk/apis/gpconnect-1-1-1/'>GP Connect 1.1.1 specification</a>.
+    This is interactive API documentation for GP Connect 1.2.0 (STU3), which has been authored from the <a href='https://developer.nhs.uk/apis/gpconnect-1-2-0/'>GP Connect 1.2.0 specification</a>.
 
     <a href='../v0'>Interactive API documentation</a> for GP Connect 0.x (DSTU2) is also available.
 
     <b>Warning! This is a test server. Do not store any information here that contains personal health information or any other confidential information. This server will be regularly purged and reloaded with fixed test data.</b>
-  version: 1.1.1
+  version: 1.2.0
   title: GP Connect
   termsOfService: ''
 host: 'orange.testlab.nhs.uk'
@@ -16,12 +16,17 @@ tags:
     description: ''
     externalDocs:
       description: Specification
-      url: 'https://developer.nhs.uk/apis/gpconnect-1-1-1/foundations.html'
+      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-0/foundations.html'
   - name: Appointment Management
     description: ''
     externalDocs:
       description: Specification
-      url: 'https://developer.nhs.uk/apis/gpconnect-1-1-1/appointments.html'
+      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-0/appointments.html'
+  - name: Access Record Structured
+    description: ''
+    externalDocs:
+      description: Specification
+      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-0/accessrecord_structured.html'
 schemes:
   - https
 paths:
@@ -1650,9 +1655,6 @@ paths:
           x-example: 09a01679-2564-0fb4-5129-aecc81ea2706
           description: Consumer trace identifier
           required: true
-
-
-
         - in: header
           name: Ssp-From
           type: string
@@ -1793,6 +1795,138 @@ paths:
           description: Appointment logical identifier
           x-example: '1'
           required: true
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request
+
+############################################################
+# Retrieve structured record
+############################################################
+  /Patient/$gpc.getstructuredrecord:
+    post:
+      tags:
+      - Access Record Structured
+      summary: Retrieve patient's structured record
+      description: ''
+      consumes:
+        - application/fhir+json
+      produces:
+        - application/fhir+json
+      parameters:
+        - in: header
+          name: Ssp-TraceID
+          type: string
+          x-example: 09a01679-2564-0fb4-5129-aecc81ea2706
+          description: Consumer trace identifier
+          required: true
+        - in: header
+          name: Ssp-From
+          type: string
+          x-example: '200000000359'
+          description: Consumer ASID
+          required: true
+        - in: header
+          name: Ssp-To
+          type: string
+          x-example: '200000000359'
+          description: Provider ASID
+          required: true
+        - in: header
+          name: Ssp-InteractionID
+          type: string
+          default: 'urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+          description: SDS interaction identifier
+          required: true
+        - in: header
+          name: Authorization
+          type: string
+          x-multiline: true
+          description: Authorization header containing JWT
+          x-example: |-
+            {
+              "iss": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search",
+              "sub": "1",
+              "aud": "https://authorize.fhir.nhs.net/token",
+              "exp": 1520782200,
+              "iat": 1520781900,
+              "reason_for_request": "directcare",
+              "requested_scope": "organization/*.read",
+              "requesting_device": {
+                "resourceType": "Device",
+                "identifier": [
+                  {
+                    "system": "Web Interface",
+                    "value": "GP Connect Demonstrator"
+                  }
+                ],
+                "model": "Demonstrator",
+                "version": "1.0",
+                "url": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search"
+              },
+              "requesting_organization": {
+                "resourceType": "Organization",
+                "identifier": [
+                  {
+                    "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                    "value": "A11111"
+                  }
+                ],
+                "name": "GP Connect Demonstrator"
+              },
+              "requesting_practitioner": {
+                "resourceType": "Practitioner",
+                "id": "1",
+                "identifier": [
+                  {
+                    "system": "https://fhir.nhs.uk/sds-user-id",
+                    "value": "G13579135"
+                  },
+                  {
+                    "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
+                    "value": "111111111"
+                  },
+                  {
+                    "system": "LocalUserSystem",
+                    "value": "1"
+                  }
+                ],
+                "name": [
+                  {
+                    "family": "Demonstrator",
+                    "given": [
+                      "GPConnect"
+                    ],
+                    "prefix": [
+                      "Ms"
+                    ]
+                  }
+                ]
+              }
+            }
+          required: true
+        - in: body
+          name: body
+          description: 'Structured record section request'
+          required: true
+          schema:
+            type: object
+            example:
+              resourceType: "Parameters"
+              parameter: 
+                - name: "patientNHSNumber"
+                  valueIdentifier: 
+                    system: "https://fhir.nhs.uk/Id/nhs-number"
+                    value: "9476719958"
+                - name: "includeAllergies"
+                  part:
+                    - name: "includeResolvedAllergies"
+                      valueBoolean: true
+                - name: "includeMedication"
+                  part:
+                    - name: "includePrescriptionIssues"
+                      valueBoolean: true
       responses:
         '200':
           description: OK
