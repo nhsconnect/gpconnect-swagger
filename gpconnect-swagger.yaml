@@ -1643,7 +1643,7 @@ paths:
       tags:
       - Appointment Management
       summary: Amend or cancel an appointment
-      description: 'TBC'
+      description: ''
       consumes:
         - application/fhir+json
       produces:
@@ -1655,6 +1655,151 @@ paths:
           x-example: 09a01679-2564-0fb4-5129-aecc81ea2706
           description: Consumer trace identifier
           required: true
+        - in: header
+          name: Ssp-From
+          type: string
+          x-example: '200000000359'
+          description: Consumer ASID
+          required: true
+        - in: header
+          name: Ssp-To
+          type: string
+          x-example: '200000000359'
+          description: Provider ASID
+          required: true
+        - in: header
+          name: Ssp-InteractionID
+          type: string
+          default: 'urn:nhs:names:services:gpconnect:fhir:rest:update:appointment-1'
+          enum:
+            - 'urn:nhs:names:services:gpconnect:fhir:rest:update:appointment-1'
+            - 'urn:nhs:names:services:gpconnect:fhir:rest:cancel:appointment-1'
+          description: SDS interaction identifier
+          required: true
+        # - in: header
+        #   name: Content-type
+        #   type: string
+        #   default: 'application/json'
+        #   description: SDS interaction identifier
+        #   required: true
+        - in: header
+          name: Authorization
+          type: string
+          x-multiline: true
+          description: Authorization header containing JWT
+          x-example: |-
+            {
+              "iss": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search",
+              "sub": "1",
+              "aud": "https://authorize.fhir.nhs.net/token",
+              "exp": 1520782200,
+              "iat": 1520781900,
+              "reason_for_request": "directcare",
+              "requested_scope": "patient/*.write",
+              "requesting_device": {
+                "resourceType": "Device",
+                "identifier": [
+                  {
+                    "system": "Web Interface",
+                    "value": "GP Connect Demonstrator"
+                  }
+                ],
+                "model": "Demonstrator",
+                "version": "1.0",
+                "url": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search"
+              },
+              "requesting_organization": {
+                "resourceType": "Organization",
+                "identifier": [
+                  {
+                    "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                    "value": "A11111"
+                  }
+                ],
+                "name": "GP Connect Demonstrator"
+              },
+              "requesting_practitioner": {
+                "resourceType": "Practitioner",
+                "id": "1",
+                "identifier": [
+                  {
+                    "system": "https://fhir.nhs.uk/sds-user-id",
+                    "value": "G13579135"
+                  },
+                  {
+                    "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
+                    "value": "111111111"
+                  },
+                  {
+                    "system": "LocalUserSystem",
+                    "value": "1"
+                  }
+                ],
+                "name": [
+                  {
+                    "family": "Demonstrator",
+                    "given": [
+                      "GPConnect"
+                    ],
+                    "prefix": [
+                      "Mr"
+                    ]
+                  }
+                ]
+              }
+            }
+          required: true
+        - in: body
+          name: body
+          description: Appointment
+          schema:
+            type: object  
+            example:
+              resourceType: Appointment
+              id: '1'
+              meta:
+                versionId: '1527764310000'
+                lastUpdated: '2018-05-31T11:58:30.000+01:00'
+                profile:
+                - https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1
+              identifier:
+              - system: https://fhir.nhs.uk/Id/gpconnect-appointment-identifier
+                value: '1'
+              status: booked
+              appointmentType:
+                coding:
+                - system: http://hl7.org/fhir/ValueSet/c80-practice-codes
+                  code: '408443003'
+                  display: General medical practice
+                text: In-person
+              priority: 0
+              description: A appointment to discuss test data
+              start: '2018-06-01T09:00:00.000+01:00'
+              end: '2018-06-01T09:10:00.000+01:00'
+              minutesDuration: 10
+              slot:
+              - reference: Slot/8
+              participant:
+              - actor:
+                  reference: Patient/2
+                status: accepted
+              - actor:
+                  reference: Location/1
+                status: accepted
+              - actor:
+                  reference: Practitioner/2
+                status: accepted
+        - in: path
+          name: id
+          type: string
+          description: Appointment logical identifier
+          x-example: '1'
+          required: true
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Bad request
 
 ############################################################
 # Retrieve structured record
@@ -1787,4 +1932,3 @@ paths:
           description: OK
         '400':
           description: Bad request
-
