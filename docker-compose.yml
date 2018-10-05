@@ -6,6 +6,7 @@ services:
       - 80:8080
     environment:
       - SWAGGER_JSON=/swagger/gpconnect-swagger.yaml 
+      - BASE_URL=/gpconnect-demonstrator/v0/swagger
     volumes:
       - ./:/swagger/
       
