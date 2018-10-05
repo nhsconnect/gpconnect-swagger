@@ -9,8 +9,8 @@ info:
   version: 1.2.0
   title: GP Connect
   termsOfService: ''
-host: 'orange.testlab.nhs.uk'
-basePath: /v1/fhir
+host: 'data.developer.nhs.uk'
+basePath: /gpconnect-demonstrator/v1/fhir
 tags:
   - name: Foundations
     description: ''
