@@ -251,7 +251,7 @@ paths:
           name: identifier
           type: string
           description: Patient identifier
-          x-example: 'https://fhir.nhs.uk/Id/nhs-number|9476719958'
+          x-example: 'https://fhir.nhs.uk/Id/nhs-number|9658218865'
           required: true
       responses:
         '200':
@@ -1918,7 +1918,7 @@ paths:
                 - name: "patientNHSNumber"
                   valueIdentifier: 
                     system: "https://fhir.nhs.uk/Id/nhs-number"
-                    value: "9476719958"
+                    value: "9658218865"
                 - name: "includeAllergies"
                   part:
                     - name: "includeResolvedAllergies"
