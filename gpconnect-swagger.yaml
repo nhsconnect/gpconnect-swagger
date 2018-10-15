@@ -1497,18 +1497,18 @@ paths:
                 profile:
                   - "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
               contained:
-                resourceType: "Organization"
-                id: "1"
-                meta:
-                  profile:
-                    - "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
-                identifier:
-                  - system: "https://fhir.nhs.uk/Id/ods-organization-code"
-                    value: "A11111"
-                name: "GP Connect Demonstrator"
-                telecom:
-                  - system: "phone"
-                    value: "0113 258 2569"
+                - resourceType: "Organization"
+                  id: "1"
+                  meta:
+                    profile:
+                      - "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+                  identifier:
+                    - system: "https://fhir.nhs.uk/Id/ods-organization-code"
+                      value: "A11111"
+                  name: "GP Connect Demonstrator"
+                  telecom:
+                    - system: "phone"
+                      value: "0113 258 2569"
               identifier:
                 - system: "https://fhir.nhs.uk/Id/nhs-number"
                   value: "9999999999"
@@ -1780,18 +1780,18 @@ paths:
                 profile:
                 - https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1
               contained:
-                resourceType: "Organization"
-                id: "1"
-                meta:
-                  profile:
-                    - "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
-                identifier:
-                  - system: "https://fhir.nhs.uk/Id/ods-organization-code"
-                    value: "A11111"
-                name: "GP Connect Demonstrator"
-                telecom:
-                  - system: "phone"
-                    value: "0113 258 2569"
+                - resourceType: "Organization"
+                  id: "1"
+                  meta:
+                    profile:
+                      - "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+                  identifier:
+                    - system: "https://fhir.nhs.uk/Id/ods-organization-code"
+                      value: "A11111"
+                  name: "GP Connect Demonstrator"
+                  telecom:
+                    - system: "phone"
+                      value: "0113 258 2569"
               identifier:
               - system: https://fhir.nhs.uk/Id/gpconnect-appointment-identifier
                 value: '1'
@@ -1961,6 +1961,10 @@ paths:
                   part:
                     - name: "includePrescriptionIssues"
                       valueBoolean: true
+                    - name: "medicationDatePeriod"
+                      valuePeriod:
+                        start: "2015-01-01"
+                        end: "2018-05-09"
       responses:
         '200':
           description: OK
