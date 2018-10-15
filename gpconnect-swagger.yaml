@@ -38,7 +38,7 @@ paths:
     get:
       tags:
       - Foundations
-      summary: Get the FHIR® conformance profile
+      summary: Get the FHIR conformance profile
       description: ''
       consumes:
         - application/fhir+json
