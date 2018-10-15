@@ -1,12 +1,12 @@
 swagger: '2.0'
 info:
   description: |-
-    This is interactive API documentation for GP Connect 1.2.0 (STU3), which has been authored from the <a href='https://developer.nhs.uk/apis/gpconnect-1-2-0/'>GP Connect 1.2.0 specification</a>.
+    This is interactive API documentation for GP Connect 1.2.1 (STU3), which has been authored from the <a href='https://developer.nhs.uk/apis/gpconnect-1-2-0/'>GP Connect 1.2.1 specification</a>.
 
     <a href='../v0'>Interactive API documentation</a> for GP Connect 0.x (DSTU2) is also available.
 
     <b>Warning! This is a test server. Do not store any information here that contains personal health information or any other confidential information. This server will be regularly purged and reloaded with fixed test data.</b>
-  version: 1.2.0
+  version: 1.2.1
   title: GP Connect
   termsOfService: ''
 host: 'orange.testlab.nhs.uk'
@@ -16,17 +16,17 @@ tags:
     description: ''
     externalDocs:
       description: Specification
-      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-0/foundations.html'
+      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-1/foundations.html'
   - name: Appointment Management
     description: ''
     externalDocs:
       description: Specification
-      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-0/appointments.html'
+      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-1/appointments.html'
   - name: Access Record Structured
     description: ''
     externalDocs:
       description: Specification
-      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-0/accessrecord_structured.html'
+      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-1/accessrecord_structured.html'
 schemes:
   - https
 paths:
@@ -611,7 +611,7 @@ paths:
           description: Bad request
 
 ############################################################
-# Find a organization
+# Find an organization
 ############################################################
   /Organization:
     get:
@@ -728,7 +728,7 @@ paths:
           description: Bad request
 
 ############################################################
-# Read a organization
+# Read an organization
 ############################################################
   /Organization/{id}:
     get:
@@ -1219,7 +1219,7 @@ paths:
           items:
             type: string
           required: true
-          default: ["ge2018-03-29", "le2018-04-15"]
+          default: ["ge2020-03-29", "le2020-04-15"]
       responses:
         '200':
           description: OK
@@ -1496,6 +1496,19 @@ paths:
               meta:
                 profile:
                   - "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+              contained:
+                resourceType: "Organization"
+                id: "1"
+                meta:
+                  profile:
+                    - "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+                identifier:
+                  - system: "https://fhir.nhs.uk/Id/ods-organization-code"
+                    value: "A11111"
+                name: "GP Connect Demonstrator"
+                telecom:
+                  - system: "phone"
+                    value: "0113 258 2569"
               identifier:
                 - system: "https://fhir.nhs.uk/Id/nhs-number"
                   value: "9999999999"
@@ -1512,6 +1525,10 @@ paths:
                 - actor:
                     reference: "Location/1"
                   status: "accepted"
+              extension:
+                - url: "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1"
+                  valueReference:
+                    reference: "#1"
           required: true
       responses:
         '200':
@@ -1762,6 +1779,19 @@ paths:
                 lastUpdated: '2018-05-31T11:58:30.000+01:00'
                 profile:
                 - https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1
+              contained:
+                resourceType: "Organization"
+                id: "1"
+                meta:
+                  profile:
+                    - "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+                identifier:
+                  - system: "https://fhir.nhs.uk/Id/ods-organization-code"
+                    value: "A11111"
+                name: "GP Connect Demonstrator"
+                telecom:
+                  - system: "phone"
+                    value: "0113 258 2569"
               identifier:
               - system: https://fhir.nhs.uk/Id/gpconnect-appointment-identifier
                 value: '1'
@@ -1789,6 +1819,10 @@ paths:
               - actor:
                   reference: Practitioner/2
                 status: accepted
+              extension:
+                - url: "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1"
+                  valueReference:
+                    reference: "#1"
         - in: path
           name: id
           type: string
