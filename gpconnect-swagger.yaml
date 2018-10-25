@@ -1,12 +1,12 @@
 swagger: '2.0'
 info:
   description: |-
-    This is interactive API documentation for GP Connect 1.2.1 (STU3), which has been authored from the <a href='https://developer.nhs.uk/apis/gpconnect-1-2-1/'>GP Connect 1.2.1 specification</a>.
+    This is interactive API documentation for GP Connect 1.2.2 (STU3), which has been authored from the <a href='https://developer.nhs.uk/apis/gpconnect-1-2-2/'>GP Connect 1.2.2 specification</a>.
 
     <a href='../v0'>Interactive API documentation</a> for GP Connect 0.x (DSTU2) is also available.
 
     <b>Warning! This is a test server. Do not store any information here that contains personal health information or any other confidential information. This server will be regularly purged and reloaded with fixed test data.</b>
-  version: 1.2.1
+  version: 1.2.2
   title: GP Connect
   termsOfService: ''
 host: 'orange.testlab.nhs.uk'
@@ -16,23 +16,23 @@ tags:
     description: ''
     externalDocs:
       description: Specification
-      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-1/foundations.html'
+      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-2/foundations.html'
   - name: Appointment Management
     description: ''
     externalDocs:
       description: Specification
-      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-1/appointments.html'
+      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-2/appointments.html'
   - name: Access Record Structured
     description: ''
     externalDocs:
       description: Specification
-      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-1/accessrecord_structured.html'
+      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-2/accessrecord_structured.html'
 schemes:
   - https
 paths:
 
 ############################################################
-# Get the FHIR® conformance profile 
+# Get the FHIR conformance profile 
 ############################################################
   /metadata:
     get:
@@ -92,7 +92,7 @@ paths:
                   }
                 ],
                 "model": "Demonstrator",
-                "version": "1.0",
+                "version": "1.2.2",
                 "url": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search"
               },
               "requesting_organization": {
@@ -554,7 +554,7 @@ paths:
                   }
                 ],
                 "model": "Demonstrator",
-                "version": "1.0",
+                "version": "1.2.2",
                 "url": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search"
               },
               "requesting_organization": {
@@ -788,7 +788,7 @@ paths:
                   }
                 ],
                 "model": "Demonstrator",
-                "version": "1.0",
+                "version": "1.2.2",
                 "url": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search"
               },
               "requesting_organization": {
@@ -905,7 +905,7 @@ paths:
                   }
                 ],
                 "model": "Demonstrator",
-                "version": "1.0",
+                "version": "1.2.2",
                 "url": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search"
               },
               "requesting_organization": {
@@ -1022,7 +1022,7 @@ paths:
                   }
                 ],
                 "model": "Demonstrator",
-                "version": "1.0",
+                "version": "1.2.2",
                 "url": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search"
               },
               "requesting_organization": {
@@ -1093,6 +1093,32 @@ paths:
                           - "Miss"
                     gender: "female"
                     birthDate: "1990-01-01"
+                    telecom:
+                      - system: "phone"
+                        value: "01132587418"
+                        use: "home"
+                      - system: "email"
+                        value: "jane.jackson@gpconnect.com"
+                        use: "home"
+                    address:
+                      - use: "home"
+                        type: "physical"
+                        line: 
+                          - "1 Withings Lane, Shadwell"
+                        city: "Leeds"
+                        district: "West Yorkshire"
+                        postalCode: "LS18 1AE"
+                    extension:
+                        - url: "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSCommunication-1"
+                          extension:
+                            - url: "language"
+                              valueCodeableConept: 
+                                - system: "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1"
+                                  code: "bo"
+                                  display: "Tibetan"
+                            - url: "interpreterRequired"
+                              valueBoolean: "false"
+                          
           required: true
       responses:
         '200':
@@ -1161,7 +1187,7 @@ paths:
                   }
                 ],
                 "model": "Demonstrator",
-                "version": "1.0",
+                "version": "1.2.2",
                 "url": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search"
               },
               "requesting_organization": {
@@ -1513,6 +1539,7 @@ paths:
                 - system: "https://fhir.nhs.uk/Id/nhs-number"
                   value: "9999999999"
               status: "booked"
+              created: "2018-10-25T10:31:55+01:00"
               description: "description"
               start: "2018-04-01T10:00:00"
               end: "2018-04-01T10:10:00"
@@ -1692,6 +1719,12 @@ paths:
             - 'urn:nhs:names:services:gpconnect:fhir:rest:update:appointment-1'
             - 'urn:nhs:names:services:gpconnect:fhir:rest:cancel:appointment-1'
           description: SDS interaction identifier
+          required: true
+        - in: header
+          name: If-Match
+          type: string
+          x-example: 'W/23'
+          description: The appointment's currnt Etag
           required: true
         # - in: header
         #   name: Content-type
@@ -1961,10 +1994,8 @@ paths:
                   part:
                     - name: "includePrescriptionIssues"
                       valueBoolean: true
-                    - name: "medicationDatePeriod"
-                      valuePeriod:
-                        start: "2015-01-01"
-                        end: "2018-05-09"
+                    - name: "medicationSearchFromDate"
+                      valueDate: "2015-01-01"
       responses:
         '200':
           description: OK
