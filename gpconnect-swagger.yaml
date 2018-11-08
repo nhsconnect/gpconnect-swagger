@@ -203,7 +203,7 @@ paths:
                   }
                 ],
                 "model": "Demonstrator",
-                "version": "1.0",
+                "version": "1.2.2",
                 "url": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search"
               },
               "requesting_organization": {
@@ -251,7 +251,7 @@ paths:
           name: identifier
           type: string
           description: Patient identifier
-          x-example: 'https://fhir.nhs.uk/Id/nhs-number|9658218865'
+          x-example: 'https://fhir.nhs.uk/Id/nhs-number|9658218873'
           required: true
       responses:
         '200':
@@ -320,7 +320,7 @@ paths:
                   }
                 ],
                 "model": "Demonstrator",
-                "version": "1.0",
+                "version": "1.2.2",
                 "url": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search"
               },
               "requesting_organization": {
@@ -437,7 +437,7 @@ paths:
                   }
                 ],
                 "model": "Demonstrator",
-                "version": "1.0",
+                "version": "1.2.2",
                 "url": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search"
               },
               "requesting_organization": {
@@ -671,7 +671,7 @@ paths:
                   }
                 ],
                 "model": "Demonstrator",
-                "version": "1.0",
+                "version": "1.2.2",
                 "url": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search"
               },
               "requesting_organization": {
@@ -1112,10 +1112,11 @@ paths:
                         - url: "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSCommunication-1"
                           extension:
                             - url: "language"
-                              valueCodeableConept: 
-                                - system: "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1"
-                                  code: "bo"
-                                  display: "Tibetan"
+                              valueCodeableConcept: 
+                                - coding:
+                                    - system: "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1"
+                                      code: "bo"
+                                      display: "Tibetan"
                             - url: "interpreterRequired"
                               valueBoolean: "false"
                           
@@ -1235,7 +1236,7 @@ paths:
           name: id
           type: string
           description: Patient logical identifier
-          x-example: '4'
+          x-example: '2'
           required: true
         - in: query
           name: start
@@ -1245,7 +1246,7 @@ paths:
           items:
             type: string
           required: true
-          default: ["ge2020-03-29", "le2020-04-15"]
+          default: ["ge2018-11-14", "le2018-11-24"]
       responses:
         '200':
           description: OK
@@ -1314,7 +1315,7 @@ paths:
                   }
                 ],
                 "model": "Demonstrator",
-                "version": "1.0",
+                "version": "1.2.2",
                 "url": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search"
               },
               "requesting_organization": {
@@ -1362,13 +1363,13 @@ paths:
           name: start
           type: string
           description: Slot start date/time
-          x-example: 'ge2018-03-01'
+          x-example: 'ge2018-11-14'
           required: true
         - in: query
           name: end
           type: string
           description: Slot end date/time
-          x-example: 'le2018-03-14'
+          x-example: 'le2018-11-24'
           required: true
         - in: query
           name: status
@@ -1399,7 +1400,7 @@ paths:
           description: Search filter
           items:
             type: string
-            enum: ['https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|gp-practice', 'https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|urgent-care', 'https://fhir.nhs.uk/Id/ods-organization-code|A11111']
+            enum: ['https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|gp-practice', 'https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|urgent-care', 'https://fhir.nhs.uk/Id/ods-organization-code|GPC001']
           default: 'https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|gp-practice'
       responses:
         '200':
@@ -1468,7 +1469,7 @@ paths:
                   }
                 ],
                 "model": "Demonstrator",
-                "version": "1.0",
+                "version": "1.2.2",
                 "url": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search"
               },
               "requesting_organization": {
@@ -1530,24 +1531,30 @@ paths:
                       - "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
                   identifier:
                     - system: "https://fhir.nhs.uk/Id/ods-organization-code"
-                      value: "A11111"
+                      value: "GPC001"
                   name: "GP Connect Demonstrator"
                   telecom:
                     - system: "phone"
                       value: "0113 258 2569"
               identifier:
                 - system: "https://fhir.nhs.uk/Id/nhs-number"
-                  value: "9999999999"
+                  value: "9658218873"
               status: "booked"
-              created: "2018-10-25T10:31:55+01:00"
-              description: "description"
-              start: "2018-04-01T10:00:00"
-              end: "2018-04-01T10:10:00"
+              appointmentType: 
+                coding: 
+                  - system: "http://hl7.org/fhir/ValueSet/c80-practice-codes"
+                    code: "408443003"
+                    display: "General medical practice"
+                text: "Telephone"
+              created: "2018-11-14T14:31:55+01:00"
+              description: "A test appointment booked through Interactive Swagger API"
+              start: "2018-11-16T10:00:00"
+              end: "2018-11-16T10:10:00"
               slot: 
                 - reference: "Slot/1"
               participant:
                 - actor:
-                    reference: "Patient/1"
+                    reference: "Patient/2"
                   status: "accepted"
                 - actor:
                     reference: "Location/1"
@@ -1558,8 +1565,8 @@ paths:
                     reference: "#1"
           required: true
       responses:
-        '200':
-          description: OK
+        '201':
+          description: Created
         '400':
           description: Bad request
 
@@ -1624,7 +1631,7 @@ paths:
                   }
                 ],
                 "model": "Demonstrator",
-                "version": "1.0",
+                "version": "1.2.2",
                 "url": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search"
               },
               "requesting_organization": {
@@ -1720,12 +1727,6 @@ paths:
             - 'urn:nhs:names:services:gpconnect:fhir:rest:cancel:appointment-1'
           description: SDS interaction identifier
           required: true
-        - in: header
-          name: If-Match
-          type: string
-          x-example: 'W/23'
-          description: The appointment's currnt Etag
-          required: true
         # - in: header
         #   name: Content-type
         #   type: string
@@ -1755,7 +1756,7 @@ paths:
                   }
                 ],
                 "model": "Demonstrator",
-                "version": "1.0",
+                "version": "1.2.2",
                 "url": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search"
               },
               "requesting_organization": {
@@ -1805,13 +1806,11 @@ paths:
           schema:
             type: object  
             example:
-              resourceType: Appointment
-              id: '1'
+              resourceType: "Appointment"
+              id: "3"
               meta:
-                versionId: '1527764310000'
-                lastUpdated: '2018-05-31T11:58:30.000+01:00'
                 profile:
-                - https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1
+                  - "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
               contained:
                 - resourceType: "Organization"
                   id: "1"
@@ -1820,42 +1819,39 @@ paths:
                       - "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
                   identifier:
                     - system: "https://fhir.nhs.uk/Id/ods-organization-code"
-                      value: "A11111"
+                      value: "GPC001"
                   name: "GP Connect Demonstrator"
                   telecom:
                     - system: "phone"
                       value: "0113 258 2569"
               identifier:
-              - system: https://fhir.nhs.uk/Id/gpconnect-appointment-identifier
-                value: '1'
-              status: booked
-              appointmentType:
-                coding:
-                - system: http://hl7.org/fhir/ValueSet/c80-practice-codes
-                  code: '408443003'
-                  display: General medical practice
-                text: In-person
-              priority: 0
-              description: A appointment to discuss test data
-              start: '2018-06-01T09:00:00.000+01:00'
-              end: '2018-06-01T09:10:00.000+01:00'
-              minutesDuration: 10
-              slot:
-              - reference: Slot/8
+                - system: "https://fhir.nhs.uk/Id/nhs-number"
+                  value: "9658218873"
+              status: "booked"
+              appointmentType: 
+                coding: 
+                  - system: "http://hl7.org/fhir/ValueSet/c80-practice-codes"
+                    code: "408443003"
+                    display: "General medical practice"
+                text: "Telephone"
+              created: "2018-11-14T14:31:55+01:00"
+              description: "A test appointment booked through Interactive Swagger API"
+              start: "2018-11-16T10:00:00"
+              end: "2018-11-16T10:10:00"
+              slot: 
+                - reference: "Slot/1"
               participant:
-              - actor:
-                  reference: Patient/2
-                status: accepted
-              - actor:
-                  reference: Location/1
-                status: accepted
-              - actor:
-                  reference: Practitioner/2
-                status: accepted
+                - actor:
+                    reference: "Patient/2"
+                  status: "accepted"
+                - actor:
+                    reference: "Location/1"
+                  status: "accepted"
               extension:
                 - url: "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1"
                   valueReference:
                     reference: "#1"
+          required: true
         - in: path
           name: id
           type: string
@@ -1929,7 +1925,7 @@ paths:
                   }
                 ],
                 "model": "Demonstrator",
-                "version": "1.0",
+                "version": "1.2.2",
                 "url": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search"
               },
               "requesting_organization": {
@@ -1985,7 +1981,7 @@ paths:
                 - name: "patientNHSNumber"
                   valueIdentifier: 
                     system: "https://fhir.nhs.uk/Id/nhs-number"
-                    value: "9658218865"
+                    value: "9658218873"
                 - name: "includeAllergies"
                   part:
                     - name: "includeResolvedAllergies"
