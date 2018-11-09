@@ -1101,7 +1101,7 @@ paths:
                         value: "jane.jackson@gpconnect.com"
                         use: "home"
                     address:
-                      - use: "home"
+                      - use: "temp"
                         type: "physical"
                         line: 
                           - "1 Withings Lane, Shadwell"
