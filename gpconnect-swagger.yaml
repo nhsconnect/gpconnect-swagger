@@ -201,7 +201,7 @@ paths:
               "identifier": [
                {
                 "system": "http://fhir.nhs.net/Id/nhs-number",
-                "value": "9476719931"
+                "value": "9658218873"
                }
               ]
              },
@@ -281,7 +281,7 @@ paths:
                 - name: "patientNHSNumber"
                   valueIdentifier: 
                     system: "http://fhir.nhs.net/Id/nhs-number"
-                    value: "9476719931"
+                    value: "9658218873"
                 - name: "recordSection"
                   valueCodeableConcept: 
                     coding:
