@@ -51,7 +51,7 @@ paths:
         - in: header
           name: Ssp-To
           type: string
-          x-example: '200000000359'
+          x-example: '918999199497'
           description: Provider ASID
           required: true
         - in: header
@@ -67,7 +67,7 @@ paths:
           description: Authorization header containing JWT
           x-example: |-
             {
-             "iss": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search",
+             "iss": "https://orange.testlab.nhs.uk/",
              "sub": "1",
              "aud": "https://authorize.fhir.nhs.net/token",
              "exp": 1519512608,
@@ -175,7 +175,7 @@ paths:
         - in: header
           name: Ssp-To
           type: string
-          x-example: '200000000359'
+          x-example: '918999199497'
           description: Provider ASID
           required: true
         - in: header
@@ -190,7 +190,7 @@ paths:
           x-multiline: true
           example: |-
             {
-             "iss": "http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/#/search",
+             "iss": "https://orange.testlab.nhs.uk/",
              "sub": "1",
              "aud": "https://authorize.fhir.nhs.net/token",
              "exp": 1519512608,
