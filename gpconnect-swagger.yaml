@@ -1400,7 +1400,7 @@ paths:
           description: Search filter
           items:
             type: string
-            enum: ['https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|gp-practice', 'https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|urgent-care', 'https://fhir.nhs.uk/Id/ods-organization-code|GPC001']
+            enum: ['https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|gp-practice', 'https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|urgent-care', 'https://fhir.nhs.uk/Id/ods-organization-code|A20047']
           default: 'https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|gp-practice'
       responses:
         '200':
