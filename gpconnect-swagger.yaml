@@ -1363,13 +1363,13 @@ paths:
           name: start
           type: string
           description: Slot start date/time
-          x-example: 'ge2018-11-14'
+          x-example: 'ge2018-11-27'
           required: true
         - in: query
           name: end
           type: string
           description: Slot end date/time
-          x-example: 'le2018-11-24'
+          x-example: 'le2018-11-30'
           required: true
         - in: query
           name: status
@@ -1389,10 +1389,10 @@ paths:
           name: _include:recurse
           type: array
           collectionFormat: multi
-          description: Reverse include
+          description: Include recurse
           items:
             type: string
-            enum: ['Schedule:actor:Practitioner', 'Schedule:actor:Location']
+            enum: ['Schedule:actor:Practitioner', 'Schedule:actor:Location', 'Location:managingOrganization']
         - in: query
           name: searchFilter
           type: array
