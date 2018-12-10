@@ -1540,12 +1540,6 @@ paths:
                 - system: "https://fhir.nhs.uk/Id/nhs-number"
                   value: "9658218873"
               status: "booked"
-              appointmentType: 
-                coding: 
-                  - system: "http://hl7.org/fhir/ValueSet/c80-practice-codes"
-                    code: "408443003"
-                    display: "General medical practice"
-                text: "Telephone"
               created: "2018-11-14T14:31:55+01:00"
               description: "A test appointment booked through Interactive Swagger API"
               start: "2018-11-16T10:00:00"
@@ -1828,12 +1822,6 @@ paths:
                 - system: "https://fhir.nhs.uk/Id/nhs-number"
                   value: "9658218873"
               status: "booked"
-              appointmentType: 
-                coding: 
-                  - system: "http://hl7.org/fhir/ValueSet/c80-practice-codes"
-                    code: "408443003"
-                    display: "General medical practice"
-                text: "Telephone"
               created: "2018-11-14T14:31:55+01:00"
               description: "A test appointment booked through Interactive Swagger API"
               start: "2018-11-16T10:00:00"
