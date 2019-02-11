@@ -51,7 +51,7 @@ paths:
         - in: header
           name: Ssp-To
           type: string
-          x-example: '918999199497'
+          x-example: '918999198993'
           description: Provider ASID
           required: true
         - in: header
@@ -175,7 +175,7 @@ paths:
         - in: header
           name: Ssp-To
           type: string
-          x-example: '918999199497'
+          x-example: '918999198993'
           description: Provider ASID
           required: true
         - in: header
