@@ -1363,13 +1363,13 @@ paths:
           name: start
           type: string
           description: Slot start date/time
-          x-example: 'ge2018-11-27'
+          x-example: 'ge2019-02-01'
           required: true
         - in: query
           name: end
           type: string
           description: Slot end date/time
-          x-example: 'le2018-11-30'
+          x-example: 'le2019-02-02'
           required: true
         - in: query
           name: status
