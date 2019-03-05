@@ -78,7 +78,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://authorize.fhir.nhs.net/token",
+              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
@@ -189,7 +189,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://authorize.fhir.nhs.net/token",
+              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
@@ -306,7 +306,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://authorize.fhir.nhs.net/token",
+              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
@@ -423,7 +423,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://authorize.fhir.nhs.net/token",
+              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
@@ -540,7 +540,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://authorize.fhir.nhs.net/token",
+              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
@@ -657,7 +657,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://authorize.fhir.nhs.net/token",
+              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
@@ -774,7 +774,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://authorize.fhir.nhs.net/token",
+              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
@@ -891,7 +891,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://authorize.fhir.nhs.net/token",
+              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
@@ -1008,7 +1008,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://authorize.fhir.nhs.net/token",
+              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
@@ -1174,7 +1174,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://authorize.fhir.nhs.net/token",
+              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
@@ -1301,7 +1301,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://authorize.fhir.nhs.net/token",
+              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
@@ -1455,7 +1455,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://authorize.fhir.nhs.net/token",
+              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
@@ -1611,7 +1611,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://authorize.fhir.nhs.net/token",
+              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
@@ -1736,7 +1736,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://authorize.fhir.nhs.net/token",
+              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
@@ -1899,7 +1899,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://authorize.fhir.nhs.net/token",
+              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
