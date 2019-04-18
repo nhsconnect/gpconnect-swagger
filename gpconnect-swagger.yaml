@@ -1,12 +1,12 @@
 swagger: '2.0'
 info:
   description: |-
-    This is interactive API documentation for GP Connect 1.2.2 (STU3), which has been authored from the <a href='https://developer.nhs.uk/apis/gpconnect-1-2-2/'>GP Connect 1.2.2 specification</a>.
+    This is interactive API documentation for GP Connect 1.2.3 (STU3), which has been authored from the <a href='https://developer.nhs.uk/apis/gpconnect-1-2-3/'>GP Connect 1.2.3 specification</a>.
 
     <a href='../v0'>Interactive API documentation</a> for GP Connect 0.x (DSTU2) is also available.
 
     <b>Warning! This is a test server. Do not store any information here that contains personal health information or any other confidential information. This server will be regularly purged and reloaded with fixed test data.</b>
-  version: 1.2.2
+  version: 1.2.3
   title: GP Connect
   termsOfService: ''
 host: 'orange.testlab.nhs.uk'
@@ -16,17 +16,17 @@ tags:
     description: ''
     externalDocs:
       description: Specification
-      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-2/foundations.html'
+      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-3/foundations.html'
   - name: Appointment Management
     description: ''
     externalDocs:
       description: Specification
-      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-2/appointments.html'
+      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-3/appointments.html'
   - name: Access Record Structured
     description: ''
     externalDocs:
       description: Specification
-      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-2/accessrecord_structured.html'
+      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-3/accessrecord_structured.html'
 schemes:
   - https
 paths:
@@ -87,13 +87,12 @@ paths:
                 "resourceType": "Device",
                 "identifier": [
                   {
-                    "system": "Web Interface",
-                    "value": "GP Connect Demonstrator"
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-system-instance-id",
+                    "value": "gpcdemonstrator-1-orange"
                   }
                 ],
-                "model": "Demonstrator",
-                "version": "1.2.2",
-                "url": "https://orange.testlab.nhs.uk/"
+                "model": "GP Connect Demonstrator",
+                "version": "1.2.3"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -103,22 +102,22 @@ paths:
                     "value": "A11111"
                   }
                 ],
-                "name": "GP Connect Demonstrator"
+                "name": "Consumer organisation name"
               },
               "requesting_practitioner": {
                 "resourceType": "Practitioner",
                 "id": "1",
                 "identifier": [
                   {
-                    "system": "https://fhir.nhs.uk/sds-user-id",
-                    "value": "G13579135"
+                    "system": "https://fhir.nhs.uk/Id/sds-user-id",
+                    "value": "111111111111"
                   },
                   {
                     "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
-                    "value": "111111111"
+                    "value": "22222222222222"
                   },
                   {
-                    "system": "LocalUserSystem",
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-user-id",
                     "value": "1"
                   }
                 ],
@@ -129,7 +128,7 @@ paths:
                       "GPConnect"
                     ],
                     "prefix": [
-                      "Mr"
+                      "Dr"
                     ]
                   }
                 ]
@@ -198,13 +197,12 @@ paths:
                 "resourceType": "Device",
                 "identifier": [
                   {
-                    "system": "Web Interface",
-                    "value": "GP Connect Demonstrator"
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-system-instance-id",
+                    "value": "gpcdemonstrator-1-orange"
                   }
                 ],
-                "model": "Demonstrator",
-                "version": "1.2.2",
-                "url": "https://orange.testlab.nhs.uk/"
+                "model": "GP Connect Demonstrator",
+                "version": "1.2.3"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -214,22 +212,22 @@ paths:
                     "value": "A11111"
                   }
                 ],
-                "name": "GP Connect Demonstrator"
+                "name": "Consumer organisation name"
               },
               "requesting_practitioner": {
                 "resourceType": "Practitioner",
                 "id": "1",
                 "identifier": [
                   {
-                    "system": "https://fhir.nhs.uk/sds-user-id",
-                    "value": "G13579135"
+                    "system": "https://fhir.nhs.uk/Id/sds-user-id",
+                    "value": "111111111111"
                   },
                   {
                     "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
-                    "value": "111111111"
+                    "value": "22222222222222"
                   },
                   {
-                    "system": "LocalUserSystem",
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-user-id",
                     "value": "1"
                   }
                 ],
@@ -240,7 +238,7 @@ paths:
                       "GPConnect"
                     ],
                     "prefix": [
-                      "Mr"
+                      "Dr"
                     ]
                   }
                 ]
@@ -315,13 +313,12 @@ paths:
                 "resourceType": "Device",
                 "identifier": [
                   {
-                    "system": "Web Interface",
-                    "value": "GP Connect Demonstrator"
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-system-instance-id",
+                    "value": "gpcdemonstrator-1-orange"
                   }
                 ],
-                "model": "Demonstrator",
-                "version": "1.2.2",
-                "url": "https://orange.testlab.nhs.uk/"
+                "model": "GP Connect Demonstrator",
+                "version": "1.2.3"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -331,22 +328,22 @@ paths:
                     "value": "A11111"
                   }
                 ],
-                "name": "GP Connect Demonstrator"
+                "name": "Consumer organisation name"
               },
               "requesting_practitioner": {
                 "resourceType": "Practitioner",
                 "id": "1",
                 "identifier": [
                   {
-                    "system": "https://fhir.nhs.uk/sds-user-id",
-                    "value": "G13579135"
+                    "system": "https://fhir.nhs.uk/Id/sds-user-id",
+                    "value": "111111111111"
                   },
                   {
                     "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
-                    "value": "111111111"
+                    "value": "22222222222222"
                   },
                   {
-                    "system": "LocalUserSystem",
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-user-id",
                     "value": "1"
                   }
                 ],
@@ -357,7 +354,7 @@ paths:
                       "GPConnect"
                     ],
                     "prefix": [
-                      "Mr"
+                      "Dr"
                     ]
                   }
                 ]
@@ -432,13 +429,12 @@ paths:
                 "resourceType": "Device",
                 "identifier": [
                   {
-                    "system": "Web Interface",
-                    "value": "GP Connect Demonstrator"
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-system-instance-id",
+                    "value": "gpcdemonstrator-1-orange"
                   }
                 ],
-                "model": "Demonstrator",
-                "version": "1.2.2",
-                "url": "https://orange.testlab.nhs.uk/"
+                "model": "GP Connect Demonstrator",
+                "version": "1.2.3"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -448,22 +444,22 @@ paths:
                     "value": "A11111"
                   }
                 ],
-                "name": "GP Connect Demonstrator"
+                "name": "Consumer organisation name"
               },
               "requesting_practitioner": {
                 "resourceType": "Practitioner",
                 "id": "1",
                 "identifier": [
                   {
-                    "system": "https://fhir.nhs.uk/sds-user-id",
-                    "value": "G13579135"
+                    "system": "https://fhir.nhs.uk/Id/sds-user-id",
+                    "value": "111111111111"
                   },
                   {
                     "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
-                    "value": "111111111"
+                    "value": "22222222222222"
                   },
                   {
-                    "system": "LocalUserSystem",
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-user-id",
                     "value": "1"
                   }
                 ],
@@ -474,7 +470,7 @@ paths:
                       "GPConnect"
                     ],
                     "prefix": [
-                      "Mr"
+                      "Dr"
                     ]
                   }
                 ]
@@ -549,13 +545,12 @@ paths:
                 "resourceType": "Device",
                 "identifier": [
                   {
-                    "system": "Web Interface",
-                    "value": "GP Connect Demonstrator"
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-system-instance-id",
+                    "value": "gpcdemonstrator-1-orange"
                   }
                 ],
-                "model": "Demonstrator",
-                "version": "1.2.2",
-                "url": "https://orange.testlab.nhs.uk/"
+                "model": "GP Connect Demonstrator",
+                "version": "1.2.3"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -565,22 +560,22 @@ paths:
                     "value": "A11111"
                   }
                 ],
-                "name": "GP Connect Demonstrator"
+                "name": "Consumer organisation name"
               },
               "requesting_practitioner": {
                 "resourceType": "Practitioner",
                 "id": "1",
                 "identifier": [
                   {
-                    "system": "https://fhir.nhs.uk/sds-user-id",
-                    "value": "G13579135"
+                    "system": "https://fhir.nhs.uk/Id/sds-user-id",
+                    "value": "111111111111"
                   },
                   {
                     "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
-                    "value": "111111111"
+                    "value": "22222222222222"
                   },
                   {
-                    "system": "LocalUserSystem",
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-user-id",
                     "value": "1"
                   }
                 ],
@@ -591,7 +586,7 @@ paths:
                       "GPConnect"
                     ],
                     "prefix": [
-                      "Mr"
+                      "Dr"
                     ]
                   }
                 ]
@@ -666,13 +661,12 @@ paths:
                 "resourceType": "Device",
                 "identifier": [
                   {
-                    "system": "Web Interface",
-                    "value": "GP Connect Demonstrator"
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-system-instance-id",
+                    "value": "gpcdemonstrator-1-orange"
                   }
                 ],
-                "model": "Demonstrator",
-                "version": "1.2.2",
-                "url": "https://orange.testlab.nhs.uk/"
+                "model": "GP Connect Demonstrator",
+                "version": "1.2.3"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -682,22 +676,22 @@ paths:
                     "value": "A11111"
                   }
                 ],
-                "name": "GP Connect Demonstrator"
+                "name": "Consumer organisation name"
               },
               "requesting_practitioner": {
                 "resourceType": "Practitioner",
                 "id": "1",
                 "identifier": [
                   {
-                    "system": "https://fhir.nhs.uk/sds-user-id",
-                    "value": "G13579135"
+                    "system": "https://fhir.nhs.uk/Id/sds-user-id",
+                    "value": "111111111111"
                   },
                   {
                     "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
-                    "value": "111111111"
+                    "value": "22222222222222"
                   },
                   {
-                    "system": "LocalUserSystem",
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-user-id",
                     "value": "1"
                   }
                 ],
@@ -708,7 +702,7 @@ paths:
                       "GPConnect"
                     ],
                     "prefix": [
-                      "Mr"
+                      "Dr"
                     ]
                   }
                 ]
@@ -783,13 +777,12 @@ paths:
                 "resourceType": "Device",
                 "identifier": [
                   {
-                    "system": "Web Interface",
-                    "value": "GP Connect Demonstrator"
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-system-instance-id",
+                    "value": "gpcdemonstrator-1-orange"
                   }
                 ],
-                "model": "Demonstrator",
-                "version": "1.2.2",
-                "url": "https://orange.testlab.nhs.uk/"
+                "model": "GP Connect Demonstrator",
+                "version": "1.2.3"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -799,22 +792,22 @@ paths:
                     "value": "A11111"
                   }
                 ],
-                "name": "GP Connect Demonstrator"
+                "name": "Consumer organisation name"
               },
               "requesting_practitioner": {
                 "resourceType": "Practitioner",
                 "id": "1",
                 "identifier": [
                   {
-                    "system": "https://fhir.nhs.uk/sds-user-id",
-                    "value": "G13579135"
+                    "system": "https://fhir.nhs.uk/Id/sds-user-id",
+                    "value": "111111111111"
                   },
                   {
                     "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
-                    "value": "111111111"
+                    "value": "22222222222222"
                   },
                   {
-                    "system": "LocalUserSystem",
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-user-id",
                     "value": "1"
                   }
                 ],
@@ -825,7 +818,7 @@ paths:
                       "GPConnect"
                     ],
                     "prefix": [
-                      "Mr"
+                      "Dr"
                     ]
                   }
                 ]
@@ -900,13 +893,12 @@ paths:
                 "resourceType": "Device",
                 "identifier": [
                   {
-                    "system": "Web Interface",
-                    "value": "GP Connect Demonstrator"
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-system-instance-id",
+                    "value": "gpcdemonstrator-1-orange"
                   }
                 ],
-                "model": "Demonstrator",
-                "version": "1.2.2",
-                "url": "https://orange.testlab.nhs.uk/"
+                "model": "GP Connect Demonstrator",
+                "version": "1.2.3"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -916,22 +908,22 @@ paths:
                     "value": "A11111"
                   }
                 ],
-                "name": "GP Connect Demonstrator"
+                "name": "Consumer organisation name"
               },
               "requesting_practitioner": {
                 "resourceType": "Practitioner",
                 "id": "1",
                 "identifier": [
                   {
-                    "system": "https://fhir.nhs.uk/sds-user-id",
-                    "value": "G13579135"
+                    "system": "https://fhir.nhs.uk/Id/sds-user-id",
+                    "value": "111111111111"
                   },
                   {
                     "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
-                    "value": "111111111"
+                    "value": "22222222222222"
                   },
                   {
-                    "system": "LocalUserSystem",
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-user-id",
                     "value": "1"
                   }
                 ],
@@ -942,7 +934,7 @@ paths:
                       "GPConnect"
                     ],
                     "prefix": [
-                      "Mr"
+                      "Dr"
                     ]
                   }
                 ]
@@ -1017,13 +1009,12 @@ paths:
                 "resourceType": "Device",
                 "identifier": [
                   {
-                    "system": "Web Interface",
-                    "value": "GP Connect Demonstrator"
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-system-instance-id",
+                    "value": "gpcdemonstrator-1-orange"
                   }
                 ],
-                "model": "Demonstrator",
-                "version": "1.2.2",
-                "url": "https://orange.testlab.nhs.uk/"
+                "model": "GP Connect Demonstrator",
+                "version": "1.2.3"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -1033,22 +1024,22 @@ paths:
                     "value": "A11111"
                   }
                 ],
-                "name": "GP Connect Demonstrator"
+                "name": "Consumer organisation name"
               },
               "requesting_practitioner": {
                 "resourceType": "Practitioner",
                 "id": "1",
                 "identifier": [
                   {
-                    "system": "https://fhir.nhs.uk/sds-user-id",
-                    "value": "G13579135"
+                    "system": "https://fhir.nhs.uk/Id/sds-user-id",
+                    "value": "111111111111"
                   },
                   {
                     "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
-                    "value": "111111111"
+                    "value": "22222222222222"
                   },
                   {
-                    "system": "LocalUserSystem",
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-user-id",
                     "value": "1"
                   }
                 ],
@@ -1059,7 +1050,7 @@ paths:
                       "GPConnect"
                     ],
                     "prefix": [
-                      "Mr"
+                      "Dr"
                     ]
                   }
                 ]
@@ -1183,13 +1174,12 @@ paths:
                 "resourceType": "Device",
                 "identifier": [
                   {
-                    "system": "Web Interface",
-                    "value": "GP Connect Demonstrator"
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-system-instance-id",
+                    "value": "gpcdemonstrator-1-orange"
                   }
                 ],
-                "model": "Demonstrator",
-                "version": "1.2.2",
-                "url": "https://orange.testlab.nhs.uk/"
+                "model": "GP Connect Demonstrator",
+                "version": "1.2.3"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -1199,22 +1189,22 @@ paths:
                     "value": "A11111"
                   }
                 ],
-                "name": "GP Connect Demonstrator"
+                "name": "Consumer organisation name"
               },
               "requesting_practitioner": {
                 "resourceType": "Practitioner",
                 "id": "1",
                 "identifier": [
                   {
-                    "system": "https://fhir.nhs.uk/sds-user-id",
-                    "value": "G13579135"
+                    "system": "https://fhir.nhs.uk/Id/sds-user-id",
+                    "value": "111111111111"
                   },
                   {
                     "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
-                    "value": "111111111"
+                    "value": "22222222222222"
                   },
                   {
-                    "system": "LocalUserSystem",
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-user-id",
                     "value": "1"
                   }
                 ],
@@ -1225,7 +1215,7 @@ paths:
                       "GPConnect"
                     ],
                     "prefix": [
-                      "Mr"
+                      "Dr"
                     ]
                   }
                 ]
@@ -1310,13 +1300,12 @@ paths:
                 "resourceType": "Device",
                 "identifier": [
                   {
-                    "system": "Web Interface",
-                    "value": "GP Connect Demonstrator"
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-system-instance-id",
+                    "value": "gpcdemonstrator-1-orange"
                   }
                 ],
-                "model": "Demonstrator",
-                "version": "1.2.2",
-                "url": "https://orange.testlab.nhs.uk/"
+                "model": "GP Connect Demonstrator",
+                "version": "1.2.3"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -1326,22 +1315,22 @@ paths:
                     "value": "A11111"
                   }
                 ],
-                "name": "GP Connect Demonstrator"
+                "name": "Consumer organisation name"
               },
               "requesting_practitioner": {
                 "resourceType": "Practitioner",
                 "id": "1",
                 "identifier": [
                   {
-                    "system": "https://fhir.nhs.uk/sds-user-id",
-                    "value": "G13579135"
+                    "system": "https://fhir.nhs.uk/Id/sds-user-id",
+                    "value": "111111111111"
                   },
                   {
                     "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
-                    "value": "111111111"
+                    "value": "22222222222222"
                   },
                   {
-                    "system": "LocalUserSystem",
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-user-id",
                     "value": "1"
                   }
                 ],
@@ -1352,7 +1341,7 @@ paths:
                       "GPConnect"
                     ],
                     "prefix": [
-                      "Mr"
+                      "Dr"
                     ]
                   }
                 ]
@@ -1464,13 +1453,12 @@ paths:
                 "resourceType": "Device",
                 "identifier": [
                   {
-                    "system": "Web Interface",
-                    "value": "GP Connect Demonstrator"
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-system-instance-id",
+                    "value": "gpcdemonstrator-1-orange"
                   }
                 ],
-                "model": "Demonstrator",
-                "version": "1.2.2",
-                "url": "https://orange.testlab.nhs.uk/"
+                "model": "GP Connect Demonstrator",
+                "version": "1.2.3"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -1480,22 +1468,22 @@ paths:
                     "value": "A11111"
                   }
                 ],
-                "name": "GP Connect Demonstrator"
+                "name": "Consumer organisation name"
               },
               "requesting_practitioner": {
                 "resourceType": "Practitioner",
                 "id": "1",
                 "identifier": [
                   {
-                    "system": "https://fhir.nhs.uk/sds-user-id",
-                    "value": "G13579135"
+                    "system": "https://fhir.nhs.uk/Id/sds-user-id",
+                    "value": "111111111111"
                   },
                   {
                     "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
-                    "value": "111111111"
+                    "value": "22222222222222"
                   },
                   {
-                    "system": "LocalUserSystem",
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-user-id",
                     "value": "1"
                   }
                 ],
@@ -1506,7 +1494,7 @@ paths:
                       "GPConnect"
                     ],
                     "prefix": [
-                      "Mr"
+                      "Dr"
                     ]
                   }
                 ]
@@ -1540,10 +1528,10 @@ paths:
                 - system: "https://fhir.nhs.uk/Id/nhs-number"
                   value: "9658218873"
               status: "booked"
-              created: "2018-11-14T14:31:55+01:00"
+              created: "2018-11-14T14:31:55+00:00"
               description: "A test appointment booked through Interactive Swagger API"
-              start: "2018-11-16T10:00:00"
-              end: "2018-11-16T10:10:00"
+              start: "2018-11-16T10:00:00+00:00"
+              end: "2018-11-16T10:10:00+00:00"
               slot: 
                 - reference: "Slot/1"
               participant:
@@ -1620,13 +1608,12 @@ paths:
                 "resourceType": "Device",
                 "identifier": [
                   {
-                    "system": "Web Interface",
-                    "value": "GP Connect Demonstrator"
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-system-instance-id",
+                    "value": "gpcdemonstrator-1-orange"
                   }
                 ],
-                "model": "Demonstrator",
-                "version": "1.2.2",
-                "url": "https://orange.testlab.nhs.uk/"
+                "model": "GP Connect Demonstrator",
+                "version": "1.2.3"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -1636,22 +1623,22 @@ paths:
                     "value": "A11111"
                   }
                 ],
-                "name": "GP Connect Demonstrator"
+                "name": "Consumer organisation name"
               },
               "requesting_practitioner": {
                 "resourceType": "Practitioner",
                 "id": "1",
                 "identifier": [
                   {
-                    "system": "https://fhir.nhs.uk/sds-user-id",
-                    "value": "G13579135"
+                    "system": "https://fhir.nhs.uk/Id/sds-user-id",
+                    "value": "111111111111"
                   },
                   {
                     "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
-                    "value": "111111111"
+                    "value": "22222222222222"
                   },
                   {
-                    "system": "LocalUserSystem",
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-user-id",
                     "value": "1"
                   }
                 ],
@@ -1662,7 +1649,7 @@ paths:
                       "GPConnect"
                     ],
                     "prefix": [
-                      "Mr"
+                      "Dr"
                     ]
                   }
                 ]
@@ -1745,13 +1732,12 @@ paths:
                 "resourceType": "Device",
                 "identifier": [
                   {
-                    "system": "Web Interface",
-                    "value": "GP Connect Demonstrator"
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-system-instance-id",
+                    "value": "gpcdemonstrator-1-orange"
                   }
                 ],
-                "model": "Demonstrator",
-                "version": "1.2.2",
-                "url": "https://orange.testlab.nhs.uk/"
+                "model": "GP Connect Demonstrator",
+                "version": "1.2.3"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -1761,22 +1747,22 @@ paths:
                     "value": "A11111"
                   }
                 ],
-                "name": "GP Connect Demonstrator"
+                "name": "Consumer organisation name"
               },
               "requesting_practitioner": {
                 "resourceType": "Practitioner",
                 "id": "1",
                 "identifier": [
                   {
-                    "system": "https://fhir.nhs.uk/sds-user-id",
-                    "value": "G13579135"
+                    "system": "https://fhir.nhs.uk/Id/sds-user-id",
+                    "value": "111111111111"
                   },
                   {
                     "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
-                    "value": "111111111"
+                    "value": "22222222222222"
                   },
                   {
-                    "system": "LocalUserSystem",
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-user-id",
                     "value": "1"
                   }
                 ],
@@ -1787,7 +1773,7 @@ paths:
                       "GPConnect"
                     ],
                     "prefix": [
-                      "Mr"
+                      "Dr"
                     ]
                   }
                 ]
@@ -1822,10 +1808,10 @@ paths:
                 - system: "https://fhir.nhs.uk/Id/nhs-number"
                   value: "9658218873"
               status: "booked"
-              created: "2018-11-14T14:31:55+01:00"
+              created: "2018-11-14T14:31:55+00:00"
               description: "A test appointment booked through Interactive Swagger API"
-              start: "2018-11-16T10:00:00"
-              end: "2018-11-16T10:10:00"
+              start: "2018-11-16T10:00:00+00:00"
+              end: "2018-11-16T10:10:00+00:00"
               slot: 
                 - reference: "Slot/1"
               participant:
@@ -1903,18 +1889,17 @@ paths:
               "exp": 1520782200,
               "iat": 1520781900,
               "reason_for_request": "directcare",
-              "requested_scope": "organization/*.read",
+              "requested_scope": "patient/*.read",
               "requesting_device": {
                 "resourceType": "Device",
                 "identifier": [
                   {
-                    "system": "Web Interface",
-                    "value": "GP Connect Demonstrator"
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-system-instance-id",
+                    "value": "gpcdemonstrator-1-orange"
                   }
                 ],
-                "model": "Demonstrator",
-                "version": "1.2.2",
-                "url": "https://orange.testlab.nhs.uk/"
+                "model": "GP Connect Demonstrator",
+                "version": "1.2.3"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -1924,22 +1909,22 @@ paths:
                     "value": "A11111"
                   }
                 ],
-                "name": "GP Connect Demonstrator"
+                "name": "Consumer organisation name"
               },
               "requesting_practitioner": {
                 "resourceType": "Practitioner",
                 "id": "1",
                 "identifier": [
                   {
-                    "system": "https://fhir.nhs.uk/sds-user-id",
-                    "value": "G13579135"
+                    "system": "https://fhir.nhs.uk/Id/sds-user-id",
+                    "value": "111111111111"
                   },
                   {
                     "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
-                    "value": "111111111"
+                    "value": "22222222222222"
                   },
                   {
-                    "system": "LocalUserSystem",
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-user-id",
                     "value": "1"
                   }
                 ],
@@ -1950,7 +1935,7 @@ paths:
                       "GPConnect"
                     ],
                     "prefix": [
-                      "Ms"
+                      "Dr"
                     ]
                   }
                 ]
