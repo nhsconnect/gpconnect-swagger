@@ -40,6 +40,7 @@ var customScript = (function(){
         exp_time = iat_time + (5 * 60);
         str.replace('<<issued_at>>', iat_time);
         str.replace('<<expiry>>', exp_time);
+        console.log(str);
         return str;
     };
 
@@ -175,8 +176,8 @@ var customScript = (function(){
     };
 
     return {
-        encodeBase64Url: function(str) {
-            return encodeBase64Url(str);
+        processJWTBody: function(str) {
+            return processJWTBody(str);
         }
     };
 
