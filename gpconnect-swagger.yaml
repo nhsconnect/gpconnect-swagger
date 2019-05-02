@@ -193,8 +193,8 @@ paths:
              "iss": "https://orange.testlab.nhs.uk/",
              "sub": "1",
              "aud": "https://authorize.fhir.nhs.net/token",
-             "exp": 1519512608,
-             "iat": 1519512308,
+             "exp": <<expiry>>,
+             "iat": <<issued_at>>,
              "reason_for_request": "directcare",
              "requested_record": {
               "resourceType": "Patient",
