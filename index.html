@@ -78,7 +78,7 @@ window.onload = function() {
     dom_id: '#swagger-ui',
     deepLinking: true,
     requestInterceptor: function(request) {
-      request.headers.Authorization = 'Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.' + customScript.encodeBase64Url(request.headers.Authorization) + '.';
+      request.headers.Authorization = 'Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.' + customScript.processJWTBody(request.headers.Authorization) + '.';
       return request;
     },
     presets: [
@@ -92,7 +92,6 @@ window.onload = function() {
   window.ui = ui
 }
 </script>
-
 </body>
 
 </html>

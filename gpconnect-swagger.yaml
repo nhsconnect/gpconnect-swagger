@@ -1,13 +1,13 @@
 swagger: '2.0'
 info:
   description: |-
-    This is interactive API documentation for GP Connect 0.5.0 (DSTU2), which has been authored from the <a href='https://developer.nhs.uk/apis/gpconnect-0-5-0/'>GP Connect 0.5.0 specification</a>.
+    This is interactive API documentation for GP Connect 0.5.2 (DSTU2), which has been authored from the <a href='https://developer.nhs.uk/apis/gpconnect-0-5-2/'>GP Connect 0.5.2 specification</a>.
 
     <a href='../v1'>Interactive API documentation</a> for GP Connect 1.x (STU3) is also available.
 
     <b>Warning! This is a test server. Do not store any information here that contains personal health information or any other confidential information. This server will be regularly purged and reloaded with fixed test data.</b>
-  version: 0.5.0
-  title: GP Connect
+  version: 0.5.2
+  title: GP Connect API
   termsOfService: ''
 host: 'orange.testlab.nhs.uk'
 basePath: /gpconnect-demonstrator/v0/fhir/
@@ -16,12 +16,12 @@ tags:
     description: ''
     externalDocs:
       description: Specification
-      url: 'https://developer.nhs.uk/apis/gpconnect-0-5-0/foundations.html'
+      url: 'https://developer.nhs.uk/apis/gpconnect-0-5-2/foundations.html'
   - name: Access Record HTML
     description: ''
     externalDocs:
       description: Specification
-      url: 'https://developer.nhs.uk/apis/gpconnect-0-5-0/accessrecord.html'
+      url: 'https://developer.nhs.uk/apis/gpconnect-0-5-2/accessrecord.html'
 schemes:
   - https
 paths:
@@ -70,8 +70,8 @@ paths:
              "iss": "https://orange.testlab.nhs.uk/",
              "sub": "1",
              "aud": "https://authorize.fhir.nhs.net/token",
-             "exp": 1519512608,
-             "iat": 1519512308,
+             "exp": <<expiry>>,
+             "iat": <<issued_at>>,
              "reason_for_request": "directcare",
              "requested_record": {
               "resourceType": "Organization",
@@ -87,13 +87,13 @@ paths:
               "resourceType": "Device",
               "id": "1",
               "identifier": [
-               {
-                "system": "Web Interface",
-                "value": "GP Connect Demonstrator"
-               }
+                {
+                  "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-system-instance-id",
+                  "value": "gpcdemonstrator-0-orange"
+                }
               ],
-              "model": "Demonstrator",
-              "version": "1.0"
+              "model": "GP Connect Demonstrator",
+              "version": "0.5.2"
              },
              "requesting_organization": {
               "resourceType": "Organization",
@@ -104,7 +104,7 @@ paths:
                 "value": "A11111"
                }
               ],
-              "name": "GP Connect Demonstrator"
+              "name": "Consumer organisation name"
              },
              "requesting_practitioner": {
               "resourceType": "Practitioner",
@@ -115,7 +115,7 @@ paths:
                 "value": "G13579135"
                },
                {
-                "system": "localSystem",
+                "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-user-id",
                 "value": "1"
                }
               ],
@@ -210,13 +210,13 @@ paths:
               "resourceType": "Device",
               "id": "1",
               "identifier": [
-               {
-                "system": "Web Interface",
-                "value": "GP Connect Demonstrator"
-               }
+                {
+                  "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-system-instance-id",
+                  "value": "gpcdemonstrator-0-orange"
+                }
               ],
-              "model": "Demonstrator",
-              "version": "1.0"
+              "model": "GP Connect Demonstrator",
+              "version": "0.5.2"
              },
              "requesting_organization": {
               "resourceType": "Organization",
@@ -227,7 +227,7 @@ paths:
                 "value": "A11111"
                }
               ],
-              "name": "GP Connect Demonstrator"
+              "name": "Consumer organisation name"
              },
              "requesting_practitioner": {
               "resourceType": "Practitioner",
@@ -238,7 +238,7 @@ paths:
                 "value": "G13579135"
                },
                {
-                "system": "localSystem",
+                "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-user-id",
                 "value": "1"
                }
               ],

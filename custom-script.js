@@ -23,6 +23,27 @@ var customScript = (function(){
 
     addLastDeployDateFooter();
 
+    function processJWTBody(str) {
+        if (typeof str !== 'string') {
+            return null;
+        }
+        str = insertTimestamps(str);
+        str = encodeBase64Url(str);
+        return str;
+    };
+
+    function insertTimestamps(str) {
+        if (typeof str !== 'string') {
+            return null;
+        }
+        iat_time = Date.now() / 1000 | 0;
+        exp_time = iat_time + (5 * 60);
+        str = str.replace('<<issued_at>>', iat_time);
+        str = str.replace('<<expiry>>', exp_time);
+        console.log(str);
+        return str;
+    };
+
     function encodeBase64Url(str) {
         if (typeof str !== 'string') {
             return null;
@@ -155,8 +176,8 @@ var customScript = (function(){
     };
 
     return {
-        encodeBase64Url: function(str) {
-            return encodeBase64Url(str);
+        processJWTBody: function(str) {
+            return processJWTBody(str);
         }
     };
 
