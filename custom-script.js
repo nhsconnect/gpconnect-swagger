@@ -23,6 +23,26 @@ var customScript = (function(){
 
     addLastDeployDateFooter();
 
+    function processJWTBody(str) {
+        if (typeof str !== 'string') {
+            return null;
+        }
+        str = insertTimestamps(str);
+        str = encodeBase64Url(str);
+        return str;
+    };
+
+    function insertTimestamps(str) {
+        if (typeof str !== 'string') {
+            return null;
+        }
+        iat_time = Date.now();
+        exp_time = iat_time + (5 * 60);
+        str.replace('<<issued_at>>', iat_time);
+        str.replace('<<expiry>>', exp_time);
+        return str;
+    };
+
     function encodeBase64Url(str) {
         if (typeof str !== 'string') {
             return null;
