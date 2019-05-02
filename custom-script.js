@@ -38,8 +38,8 @@ var customScript = (function(){
         }
         iat_time = Date.now();
         exp_time = iat_time + (5 * 60);
-        str.replace('<<issued_at>>', iat_time);
-        str.replace('<<expiry>>', exp_time);
+        str = str.replace('<<issued_at>>', iat_time);
+        str = str.replace('<<expiry>>', exp_time);
         console.log(str);
         return str;
     };
