@@ -1524,9 +1524,6 @@ paths:
                   telecom:
                     - system: "phone"
                       value: "0113 258 2569"
-              identifier:
-                - system: "https://fhir.nhs.uk/Id/nhs-number"
-                  value: "9658218873"
               status: "booked"
               created: "2018-11-14T14:31:55+00:00"
               description: "A test appointment booked through Interactive Swagger API"
@@ -1804,9 +1801,6 @@ paths:
                   telecom:
                     - system: "phone"
                       value: "0113 258 2569"
-              identifier:
-                - system: "https://fhir.nhs.uk/Id/nhs-number"
-                  value: "9658218873"
               status: "booked"
               created: "2018-11-14T14:31:55+00:00"
               description: "A test appointment booked through Interactive Swagger API"
