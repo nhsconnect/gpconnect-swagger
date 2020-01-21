@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   description: |-
-    This is interactive API documentation for GP Connect API 1.2.3 (STU3), which has been authored from the <a href='https://developer.nhs.uk/apis/gpconnect-1-2-3/'>GP Connect API 1.2.3 specification</a>.
+    This is interactive API documentation for GP Connect API 1.2.3 (STU3), which has been authored from the <a href='https://developer.nhs.uk/apis/gpconnect-1-2-3/' target='_blank'>GP Connect API 1.2.3 specification</a>.
 
     <a href='../../swagger-v0.html' target='_top'>Interactive API documentation</a> for GP Connect API 0.x (DSTU2) is also available.
 
