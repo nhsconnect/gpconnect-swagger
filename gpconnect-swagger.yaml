@@ -1,12 +1,12 @@
 swagger: '2.0'
 info:
   description: |-
-    This is interactive API documentation for GP Connect API 0.5.2 (DSTU2), which has been authored from the <a href='https://developer.nhs.uk/apis/gpconnect-0-5-2/' target='_blank'>GP Connect API 0.5.2 specification</a>.
+    This is interactive API documentation for GP Connect API 0.7.2 (DSTU2), which has been authored from the <a href='https://developer.nhs.uk/apis/gpconnect-0-7-2/' target='_blank'>GP Connect API 0.7.2 specification</a>.
 
     <a href='../../swagger-v1.html' target='_top'>Interactive API documentation</a> for GP Connect API 1.x (STU3) is also available.
 
     <b>Warning! This is a test server. Do not store any information here that contains personal health information or any other confidential information. This server will be regularly purged and reloaded with fixed test data.</b>
-  version: 0.5.2
+  version: 0.7.2
   title: GP Connect API
   termsOfService: ''
 host: 'orange.testlab.nhs.uk'
@@ -16,12 +16,12 @@ tags:
     description: ''
     externalDocs:
       description: Specification
-      url: 'https://developer.nhs.uk/apis/gpconnect-0-5-2/foundations.html'
+      url: 'https://developer.nhs.uk/apis/gpconnect-0-7-2/foundations.html'
   - name: Access Record HTML
     description: ''
     externalDocs:
       description: Specification
-      url: 'https://developer.nhs.uk/apis/gpconnect-0-5-2/accessrecord.html'
+      url: 'https://developer.nhs.uk/apis/gpconnect-0-7-2/accessrecord.html'
 schemes:
   - https
 paths:
@@ -93,7 +93,7 @@ paths:
                 }
               ],
               "model": "GP Connect Demonstrator",
-              "version": "0.5.2"
+              "version": "0.7.2"
              },
              "requesting_organization": {
               "resourceType": "Organization",
@@ -216,7 +216,7 @@ paths:
                 }
               ],
               "model": "GP Connect Demonstrator",
-              "version": "0.5.2"
+              "version": "0.7.2"
              },
              "requesting_organization": {
               "resourceType": "Organization",
