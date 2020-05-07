@@ -1236,7 +1236,7 @@ paths:
           items:
             type: string
           required: true
-          default: ["ge2018-11-14", "le2018-11-24"]
+          default: ["ge2020-05-09", "le2020-05-19"]
       responses:
         '200':
           description: OK
@@ -1352,13 +1352,13 @@ paths:
           name: start
           type: string
           description: Slot start date/time
-          x-example: 'ge2019-02-01'
+          x-example: 'ge2020-05-09'
           required: true
         - in: query
           name: end
           type: string
           description: Slot end date/time
-          x-example: 'le2019-02-02'
+          x-example: 'le2020-05-10'
           required: true
         - in: query
           name: status
