@@ -6,7 +6,7 @@ info:
     <a href='../../swagger-v0.html' target='_top'>Interactive API documentation</a> for GP Connect API 0.x (DSTU2) is also available.
 
     <b>Warning! This is a test server. Do not store any information here that contains personal health information or any other confidential information. This server will be regularly purged and reloaded with fixed test data.</b>
-  version: 1.2.6
+  version: 1.2.7
   title: GP Connect API
   termsOfService: ''
 host: 'orange.testlab.nhs.uk'
@@ -38,7 +38,7 @@ paths:
     get:
       tags:
       - Foundations
-      summary: Get the FHIR conformance profile
+      summary: Get the FHIR capability statement
       description: ''
       consumes:
         - application/fhir+json
