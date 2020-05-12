@@ -265,6 +265,6 @@ paths:
         '403':
           description: ACCESS_DENIED, NO_PATIENT_CONSENT
         '404':
-          description: PATIENT_NOT_FOUND, INVALID_PARAMETER
+          description: PATIENT_NOT_FOUND
         '422':
-          description: INVALID_RESOURCE
+          description: INVALID_PARAMETER, INVALID_RESOURCE
