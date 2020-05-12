@@ -263,12 +263,8 @@ paths:
         '400':
           description: INVALID_NHS_NUMBER
         '403':
-          description: ACCESS_DENIED
-        '403':
-          description: NO_PATIENT_CONSENT
+          description: ACCESS_DENIED | NO_PATIENT_CONSENT
         '404':
-          description: PATIENT_NOT_FOUND
-        '422':
-          description: INVALID_PARAMETER
+          description: PATIENT_NOT_FOUND | INVALID_PARAMETER
         '422':
           description: INVALID_RESOURCE
