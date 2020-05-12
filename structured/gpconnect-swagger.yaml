@@ -126,8 +126,8 @@ paths:
       responses:
         '200':
           description: OK
-        '400':
-          description: Bad request
+        '403':
+          description: ACCESS_DENIED
 
 
 ############################################################
@@ -261,4 +261,14 @@ paths:
         '200':
           description: OK
         '400':
-          description: Bad request
+          description: INVALID_NHS_NUMBER
+        '403':
+          description: ACCESS_DENIED
+        '403':
+          description: NO_PATIENT_CONSENT
+        '404':
+          description: PATIENT_NOT_FOUND
+        '422':
+          description: INVALID_PARAMETER
+        '422':
+          description: INVALID_RESOURCE
