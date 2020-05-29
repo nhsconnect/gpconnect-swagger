@@ -1069,8 +1069,7 @@ paths:
                         value: "9999999999"
                     name:
                       - use: "official"
-                        family:
-                          - "Jackson"
+                        family: "Jackson"
                         given:
                           - "Jane"
                         prefix:
