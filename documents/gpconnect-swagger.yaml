@@ -380,9 +380,7 @@ paths:
         '200':
           description: OK
         '403':
-          description: ACCESS_DENIED
-        '403':
-          description: NO_PATIENT_CONSENT
+          description: ACCESS_DENIED, NO_PATIENT_CONSENT
         '404':
           description: PATIENT_NOT_FOUND
         '422':
