@@ -1,32 +1,32 @@
 swagger: '2.0'
 info:
   description: |-
-    This is interactive API documentation for GP Connect API 1.5.0 (STU3) - Access Record Structured, which has been authored from the <a href='https://developer.nhs.uk/apis/gpconnect-1-5-0/' target='_blank'>GP Connect API 1.5.0 specification</a>.
+    This is interactive API documentation for GP Connect API 1.5.0 (STU3) - Access Document, which has been authored from the <a href='https://developer.nhs.uk/apis/gpconnect-1-5-0/' target='_blank'>GP Connect API 1.5.0 specification</a>.
 
     <b>Warning! This is a test server. Do not store any information here that contains personal health information or any other confidential information. This server will be regularly purged and reloaded with fixed test data.</b>
-  version: 1.5.0 - Access Record Structured
+  version: 1.5.0 - Access Document
   title: GP Connect API
   termsOfService: ''
 host: 'orange.testlab.nhs.uk'
 basePath: /B82617/STU3/1/gpconnect/documents/fhir
 tags:
-  - name: Access Record Structured
+  - name: Access Document
     description: ''
     externalDocs:
       description: Specification
-      url: 'https://developer.nhs.uk/apis/gpconnect-1-5-0/accessrecord_structured.html'
+      url: 'https://developer.nhs.uk/apis/gpconnect-1-5-0/access_documents.html'
 schemes:
   - https
 paths:
 
 ############################################################
-# Get the Access Record Structured FHIR conformance profile 
+# Get the Access Document FHIR conformance profile 
 ############################################################
   /metadata:
     get:
       tags:
-      - Access Record Structured
-      summary: Get the Access Record Structured FHIR capability statement
+      - Access Document
+      summary: Get the Access Document FHIR capability statement
       description: ''
       consumes:
         - application/fhir+json
@@ -54,7 +54,7 @@ paths:
         - in: header
           name: Ssp-InteractionID
           type: string
-          default: 'urn:nhs:names:services:gpconnect:structured:fhir:rest:read:metadata-1'
+          default: 'urn:nhs:names:services:gpconnect:documents:fhir:rest:read:metadata-1'
           description: SDS interaction identifier
           required: true
         - in: header
@@ -129,15 +129,14 @@ paths:
         '403':
           description: ACCESS_DENIED
 
-
 ############################################################
-# Retrieve structured record
+# Find a patient
 ############################################################
-  /Patient/$gpc.getstructuredrecord:
-    post:
+  /Patient:
+    get:
       tags:
-      - Access Record Structured
-      summary: Retrieve patient's structured record
+      - Access Document
+      summary: Find a patient
       description: ''
       consumes:
         - application/fhir+json
@@ -165,7 +164,7 @@ paths:
         - in: header
           name: Ssp-InteractionID
           type: string
-          default: 'urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
+          default: 'urn:nhs:names:services:gpconnect:documents:fhir:rest:search:patient-1'
           description: SDS interaction identifier
           required: true
         - in: header
@@ -234,37 +233,157 @@ paths:
               }
             }
           required: true
-        - in: body
-          name: body
-          description: 'Structured record section request'
+        - in: query
+          name: identifier
+          type: string
+          description: Patient identifier
+          x-example: 'https://fhir.nhs.uk/Id/nhs-number|9658218873'
           required: true
-          schema:
-            type: object
-            example:
-              resourceType: "Parameters"
-              parameter: 
-                - name: "patientNHSNumber"
-                  valueIdentifier: 
-                    system: "https://fhir.nhs.uk/Id/nhs-number"
-                    value: "9658218873"
-                - name: "includeAllergies"
-                  part:
-                    - name: "includeResolvedAllergies"
-                      valueBoolean: true
-                - name: "includeMedication"
-                  part:
-                    - name: "includePrescriptionIssues"
-                      valueBoolean: true
-                    - name: "medicationSearchFromDate"
-                      valueDate: "2015-01-01"
       responses:
         '200':
           description: OK
         '400':
           description: INVALID_NHS_NUMBER
         '403':
-          description: ACCESS_DENIED, NO_PATIENT_CONSENT
+          description: ACCESS_DENIED
+        '422':
+          description: INVALID_PARAMETER
+
+############################################################
+# Search for a patient's documents
+############################################################
+/Patient/{id}/DocumentReference:
+    get:
+      tags:
+      - Access Document
+      summary: Search for a patient's documents
+      description: ''
+      consumes:
+        - application/fhir+json
+      produces:
+        - application/fhir+json
+      parameters:
+        - in: header
+          name: Ssp-TraceID
+          type: string
+          x-example: 09a01679-2564-0fb4-5129-aecc81ea2706
+          description: Consumer trace identifier
+          required: true
+        - in: header
+          name: Ssp-From
+          type: string
+          x-example: '200000000359'
+          description: Consumer ASID
+          required: true
+        - in: header
+          name: Ssp-To
+          type: string
+          x-example: '918999198993'
+          description: Provider ASID
+          required: true
+        - in: header
+          name: Ssp-InteractionID
+          type: string
+          default: 'urn:nhs:names:services:gpconnect:documents:fhir:rest:search:documentreference-1'
+          description: SDS interaction identifier
+          required: true
+        - in: header
+          name: Authorization
+          type: string
+          x-multiline: true
+          description: Authorization header containing JWT
+          x-example: |-
+            {
+              "iss": "https://orange.testlab.nhs.uk/",
+              "sub": "1",
+              "aud": "https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/documents/fhir",
+              "exp": <<expiry>>,
+              "iat": <<issued_at>>,
+              "reason_for_request": "directcare",
+              "requested_scope": "patient/*.read",
+              "requesting_device": {
+                "resourceType": "Device",
+                "identifier": [
+                  {
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-system-instance-id",
+                    "value": "gpcdemonstrator-1-orange"
+                  }
+                ],
+                "model": "GP Connect Demonstrator",
+                "version": "1.5.0"
+              },
+              "requesting_organization": {
+                "resourceType": "Organization",
+                "identifier": [
+                  {
+                    "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                    "value": "A11111"
+                  }
+                ],
+                "name": "Consumer organisation name"
+              },
+              "requesting_practitioner": {
+                "resourceType": "Practitioner",
+                "id": "1",
+                "identifier": [
+                  {
+                    "system": "https://fhir.nhs.uk/Id/sds-user-id",
+                    "value": "111111111111"
+                  },
+                  {
+                    "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
+                    "value": "22222222222222"
+                  },
+                  {
+                    "system": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/Id/local-user-id",
+                    "value": "1"
+                  }
+                ],
+                "name": [
+                  {
+                    "family": "Demonstrator",
+                    "given": [
+                      "GPConnect"
+                    ],
+                    "prefix": [
+                      "Dr"
+                    ]
+                  }
+                ]
+              }
+            }
+          required: true
+        - in: path
+          name: id
+          type: string
+          description: Patient logical identifier
+          x-example: '2'
+          required: true
+        - in: query
+          name: _include
+          type: array
+          collectionFormat: multi
+          description: Include
+          items:
+            type: string
+            enum: ['DocumentReference:subject:Patient', 'DocumentReference:custodian:Organization', 'DocumentReference:author:Organization', 'DocumentReference:author:Practitioner']
+        - in: query
+          name: _revinclude:recurse
+          type: array
+          collectionFormat: multi
+          description: Reverse include recurse
+          items:
+            type: string
+            enum: ['PractitionerRole:practitioner']
+
+      responses:
+        '200':
+          description: OK
+        '403':
+          description: ACCESS_DENIED
+        '403':
+          description: NO_PATIENT_CONSENT
         '404':
           description: PATIENT_NOT_FOUND
         '422':
-          description: INVALID_PARAMETER, INVALID_RESOURCE
+          description: INVALID_PARAMETER

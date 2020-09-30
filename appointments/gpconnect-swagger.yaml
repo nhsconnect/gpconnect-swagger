@@ -1,25 +1,25 @@
 swagger: '2.0'
 info:
   description: |-
-    This is interactive API documentation for GP Connect API 1.2.7 (STU3) - Appointment Management, which has been authored from the <a href='https://developer.nhs.uk/apis/gpconnect-1-2-7/' target='_blank'>GP Connect API 1.2.7 specification</a>.
+    This is interactive API documentation for GP Connect API 1.5.0 (STU3) - Appointment Management, which has been authored from the <a href='https://developer.nhs.uk/apis/gpconnect-1-5-0/' target='_blank'>GP Connect API 1.5.0 specification</a>.
 
     <b>Warning! This is a test server. Do not store any information here that contains personal health information or any other confidential information. This server will be regularly purged and reloaded with fixed test data.</b>
-  version: 1.2.7 - Appointment Management
+  version: 1.5.0 - Appointment Management
   title: GP Connect API
   termsOfService: ''
 host: 'orange.testlab.nhs.uk'
-basePath: /gpconnect-demonstrator/v1/fhir
+basePath: /B82617/STU3/1/gpconnect/documents/fhir
 tags:
   - name: Foundations
     description: ''
     externalDocs:
       description: Specification
-      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-7/foundations.html'
+      url: 'https://developer.nhs.uk/apis/gpconnect-1-5-0/foundations.html'
   - name: Appointment Management
     description: ''
     externalDocs:
       description: Specification
-      url: 'https://developer.nhs.uk/apis/gpconnect-1-2-7/appointments.html'
+      url: 'https://developer.nhs.uk/apis/gpconnect-1-5-0/appointments.html'
 schemes:
   - https
 paths:
@@ -71,7 +71,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
+              "aud": "https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir",
               "exp": <<expiry>>,
               "iat": <<issued_at>>,
               "reason_for_request": "directcare",
@@ -85,7 +85,7 @@ paths:
                   }
                 ],
                 "model": "GP Connect Demonstrator",
-                "version": "1.2.7"
+                "version": "1.5.0"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -181,7 +181,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
+              "aud": "https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir",
               "exp": <<expiry>>,
               "iat": <<issued_at>>,
               "reason_for_request": "directcare",
@@ -195,7 +195,7 @@ paths:
                   }
                 ],
                 "model": "GP Connect Demonstrator",
-                "version": "1.2.7"
+                "version": "1.5.0"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -297,7 +297,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
+              "aud": "https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir",
               "exp": <<expiry>>,
               "iat": <<issued_at>>,
               "reason_for_request": "directcare",
@@ -311,7 +311,7 @@ paths:
                   }
                 ],
                 "model": "GP Connect Demonstrator",
-                "version": "1.2.7"
+                "version": "1.5.0"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -413,7 +413,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
+              "aud": "https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir",
               "exp": <<expiry>>,
               "iat": <<issued_at>>,
               "reason_for_request": "directcare",
@@ -427,7 +427,7 @@ paths:
                   }
                 ],
                 "model": "GP Connect Demonstrator",
-                "version": "1.2.7"
+                "version": "1.5.0"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -529,7 +529,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
+              "aud": "https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir",
               "exp": <<expiry>>,
               "iat": <<issued_at>>,
               "reason_for_request": "directcare",
@@ -543,7 +543,7 @@ paths:
                   }
                 ],
                 "model": "GP Connect Demonstrator",
-                "version": "1.2.7"
+                "version": "1.5.0"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -645,7 +645,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
+              "aud": "https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir",
               "exp": <<expiry>>,
               "iat": <<issued_at>>,
               "reason_for_request": "directcare",
@@ -659,7 +659,7 @@ paths:
                   }
                 ],
                 "model": "GP Connect Demonstrator",
-                "version": "1.2.7"
+                "version": "1.5.0"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -761,7 +761,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
+              "aud": "https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir",
               "exp": <<expiry>>,
               "iat": <<issued_at>>,
               "reason_for_request": "directcare",
@@ -775,7 +775,7 @@ paths:
                   }
                 ],
                 "model": "GP Connect Demonstrator",
-                "version": "1.2.7"
+                "version": "1.5.0"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -877,7 +877,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
+              "aud": "https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir",
               "exp": <<expiry>>,
               "iat": <<issued_at>>,
               "reason_for_request": "directcare",
@@ -891,7 +891,7 @@ paths:
                   }
                 ],
                 "model": "GP Connect Demonstrator",
-                "version": "1.2.7"
+                "version": "1.5.0"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -993,7 +993,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
+              "aud": "https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir",
               "exp": <<expiry>>,
               "iat": <<issued_at>>,
               "reason_for_request": "directcare",
@@ -1007,7 +1007,7 @@ paths:
                   }
                 ],
                 "model": "GP Connect Demonstrator",
-                "version": "1.2.7"
+                "version": "1.5.0"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -1157,7 +1157,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
+              "aud": "https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir",
               "exp": <<expiry>>,
               "iat": <<issued_at>>,
               "reason_for_request": "directcare",
@@ -1171,7 +1171,7 @@ paths:
                   }
                 ],
                 "model": "GP Connect Demonstrator",
-                "version": "1.2.7"
+                "version": "1.5.0"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -1283,7 +1283,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
+              "aud": "https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir",
               "exp": <<expiry>>,
               "iat": <<issued_at>>,
               "reason_for_request": "directcare",
@@ -1297,7 +1297,7 @@ paths:
                   }
                 ],
                 "model": "GP Connect Demonstrator",
-                "version": "1.2.7"
+                "version": "1.5.0"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -1436,7 +1436,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
+              "aud": "https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir",
               "exp": <<expiry>>,
               "iat": <<issued_at>>,
               "reason_for_request": "directcare",
@@ -1450,7 +1450,7 @@ paths:
                   }
                 ],
                 "model": "GP Connect Demonstrator",
-                "version": "1.2.7"
+                "version": "1.5.0"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -1588,7 +1588,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
+              "aud": "https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir",
               "exp": <<expiry>>,
               "iat": <<issued_at>>,
               "reason_for_request": "directcare",
@@ -1602,7 +1602,7 @@ paths:
                   }
                 ],
                 "model": "GP Connect Demonstrator",
-                "version": "1.2.7"
+                "version": "1.5.0"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
@@ -1712,7 +1712,7 @@ paths:
             {
               "iss": "https://orange.testlab.nhs.uk/",
               "sub": "1",
-              "aud": "https://orange.testlab.nhs.uk/gpconnect-demonstrator/v1/fhir",
+              "aud": "https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/fhir",
               "exp": <<expiry>>,
               "iat": <<issued_at>>,
               "reason_for_request": "directcare",
@@ -1726,7 +1726,7 @@ paths:
                   }
                 ],
                 "model": "GP Connect Demonstrator",
-                "version": "1.2.7"
+                "version": "1.5.0"
               },
               "requesting_organization": {
                 "resourceType": "Organization",
