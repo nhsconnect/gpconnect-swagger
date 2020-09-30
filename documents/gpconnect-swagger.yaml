@@ -8,7 +8,7 @@ info:
   title: GP Connect API
   termsOfService: ''
 host: 'orange.testlab.nhs.uk'
-basePath: /B82617/STU3/1/gpconnect/documents/fhir
+basePath: /B82617/STU3/1/gpconnect/fhir
 tags:
   - name: Access Document
     description: ''
