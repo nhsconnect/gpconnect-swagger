@@ -252,7 +252,7 @@ paths:
 ############################################################
 # Search for a patient's documents
 ############################################################
-/Patient/{id}/DocumentReference:
+  /Patient/{id}/DocumentReference:
     get:
       tags:
       - Access Document
