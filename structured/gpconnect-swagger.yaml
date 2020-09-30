@@ -246,7 +246,7 @@ paths:
                 - name: "patientNHSNumber"
                   valueIdentifier: 
                     system: "https://fhir.nhs.uk/Id/nhs-number"
-                    value: "9658218873"
+                    value: "9690937286"
                 - name: "includeAllergies"
                   part:
                     - name: "includeResolvedAllergies"

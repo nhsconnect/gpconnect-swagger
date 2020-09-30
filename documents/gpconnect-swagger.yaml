@@ -237,7 +237,7 @@ paths:
           name: identifier
           type: string
           description: Patient identifier
-          x-example: 'https://fhir.nhs.uk/Id/nhs-number|9658218873'
+          x-example: 'https://fhir.nhs.uk/Id/nhs-number|9690937286'
           required: true
       responses:
         '200':
