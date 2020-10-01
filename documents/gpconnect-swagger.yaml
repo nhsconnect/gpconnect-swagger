@@ -387,7 +387,7 @@ paths:
           required: false
           default: ["ge2001-01-01", "le2020-09-01"]
         - in: query
-          name: identifier
+          name: author
           type: string
           description: Organisation identifier
           x-example: 'https://fhir.nhs.uk/Id/ods-organization-code|A20047'
