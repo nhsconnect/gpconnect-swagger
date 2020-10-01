@@ -390,7 +390,7 @@ paths:
           name: author
           type: string
           description: Organisation identifier
-          x-example: 'https://fhir.nhs.uk/Id/ods-organization-code|A20047'
+          x-example: ''
           required: false
         - in: query
           name: description
@@ -518,15 +518,13 @@ paths:
           name: id
           type: string
           description: Document logical identifier
-          x-example: '27863182736'
+          x-example: '07a6483f-732b-461e-86b6-edb665c45510'
           required: true
 
       responses:
         '200':
           description: OK
         '403':
-          description: ACCESS_DENIED, NO_PATIENT_CONSENT
+          description: ACCESS_DENIED
         '404':
-          description: PATIENT_NOT_FOUND
-        '422':
-          description: INVALID_PARAMETER
+          description: NO_RECORD_FOUND
