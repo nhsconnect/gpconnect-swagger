@@ -261,7 +261,6 @@ paths:
                 - name: "includeUncategorisedData"
                 - name: "includeInvestigations"
                 - name: "includeReferrals"
-                - name: "includeDiaryEntries"
 
       responses:
         '200':
