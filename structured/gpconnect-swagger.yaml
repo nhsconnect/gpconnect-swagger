@@ -257,6 +257,49 @@ paths:
                       valueBoolean: true
                     - name: "medicationSearchFromDate"
                       valueDate: "2015-01-01"
+                - name: "includeConsultations"
+                  part:
+                    - name: "consultationSearchPeriod"
+                      valuePeriod:
+                        - start: "2015-01-01"
+                          end: "2020-01-01"
+                    - name: "includeNumberOfMostRecent"
+                      valueInteger: 3
+                - name: "includeProblems"
+                  part:
+                    - name: "filterStatus"
+                      valueCode: "active"
+                    - name: "filterSignificance"
+                      valueCode: "major"
+                - name: "includeImmunisations"
+                  part:
+                    - name: "includeNotGiven"
+                      valueBoolean: false
+                    - name: "includeDissentConsent"
+                      valueBoolean: false
+                - name: "includeUncategorisedData"
+                  part:
+                    - name: "uncategorisedDataSearchPeriod"
+                      valuePeriod:
+                        - start: "2015-01-01"
+                          end: "2020-01-01"
+                - name: "includeInvestigations"
+                  part:
+                    - name: "investigationSearchPeriod"
+                      valuePeriod:
+                        - start: "2015-01-01"
+                          end: "2020-01-01"
+                - name: "includeReferrals"
+                  part:
+                    - name: "referralSearchPeriod"
+                      valuePeriod:
+                        - start: "2015-01-01"
+                          end: "2020-01-01"
+                - name: "includeDiaryEntries"
+                  part:
+                    - name: "diaryEntriesSearchDate"
+                      valueDate: "2015-01-01"
+                      
       responses:
         '200':
           description: OK
