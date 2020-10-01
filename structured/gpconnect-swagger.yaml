@@ -248,10 +248,10 @@ paths:
                     system: "https://fhir.nhs.uk/Id/nhs-number"
                     value: "9690937286"
                 - name: "includeAllergies"
-                - name: "includeMedication"
                   part:
-                    - name: "medicationSearchFromDate"
-                      valueDate: "2015-01-01"
+                    - name: "includeResolvedAllergies"
+                      valueBoolean: true
+                - name: "includeMedication"
                 - name: "includeConsultations"
                   part:
                     - name: "includeNumberOfMostRecent"
